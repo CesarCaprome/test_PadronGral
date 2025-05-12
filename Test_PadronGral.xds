@@ -1,0 +1,56 @@
+{
+    "name": "Test_PadronGral",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "7.8.0.59",
+            "frameworkVersion": "7.8.0.33"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:50958/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
+    },
+    "xdsVersion": "4.3.6",
+    "xdsBuild": 11,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext78",
+    "viewOrderMap": {
+        "view": [
+            "4e64aad3-0966-4bbd-96e3-74075f482bf0",
+            "18f589bb-e7b4-4e25-835e-c608cf12c3f7",
+            "5cb354e0-6e18-4c9d-8e03-248362feb495"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "dda491c0-02e8-463b-a1b6-5911869958ab",
+            "a3ccc500-1b45-43c8-859a-351a8c295c7e",
+            "82b8afd9-dd8e-4948-b860-3708d1550f36"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
