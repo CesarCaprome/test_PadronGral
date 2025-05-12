@@ -3,3 +3,36 @@ bootstrap.*
 classic.json*
 modern.json*
 .sencha
+
+
+# Archivos y carpetas generados automáticamente
+/build/
+/ext/
+/packages/
+/metadata/
+/sass/.sass-cache/
+/app.json.meta
+bootstrap.json
+bootstrap.jsonp
+bootstrap.js
+bootstrap.css
+.arch-internal-preview.css
+
+# Archivos temporales o del entorno
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Archivos específicos de la app que no se deben versionar
+Test_PadronGral.xls
+
+# Archivos de configuración del editor
+.vscode/
+.idea/
+*.code-workspace
+workspace.json
+
+# Git
+.gitignore
