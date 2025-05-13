@@ -17,6 +17,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
     extend: 'Ext.window.Window',
     alias: 'widget.cntprincipal',
 
+    mixins: '// ver si graba en VSC',
     requires: [
         'App_Test_PadronGral.view.cntPrincipalViewModel',
         'Ext.form.FieldContainer',
