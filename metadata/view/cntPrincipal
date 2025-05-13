@@ -13,9 +13,6 @@
         "designer|userClassName": "cntPrincipal",
         "height": 569,
         "iconCls": "x-fa fa-address-book",
-        "mixins": [
-            "// ver si graba en VSC"
-        ],
         "title": "Padron Gral",
         "width": 738
     },
@@ -28,8 +25,7 @@
         "height": "auto",
         "title": "string",
         "width": "auto",
-        "iconCls": "string",
-        "mixins": "object"
+        "iconCls": "string"
     },
     "name": "MyWindow",
     "designerId": "4e64aad3-0966-4bbd-96e3-74075f482bf0",
