@@ -25,7 +25,6 @@
         "height": "auto",
         "title": "string",
         "width": "auto",
-        "style": "object",
         "iconCls": "string"
     },
     "name": "MyWindow",
@@ -405,9 +404,9 @@
                     "{",
                     "    ",
                     "    borderTop: '2px solid #ADD8E6', // Borde superior sólido",
+                    "",
                     "\t",
-                    "}",
-                    ""
+                    "}"
                 ],
                 "title": "My Grid Panel"
             },
@@ -499,6 +498,9 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "configAlternates": {
+                        "style": "object"
+                    },
                     "name": "MyTable",
                     "designerId": "0aa91a42-a747-4a14-bfab-a541624a5b3b"
                 }
