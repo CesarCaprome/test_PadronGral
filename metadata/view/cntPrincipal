@@ -25,6 +25,7 @@
         "height": "auto",
         "title": "string",
         "width": "auto",
+        "style": "object",
         "iconCls": "string"
     },
     "name": "MyWindow",
