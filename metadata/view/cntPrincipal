@@ -43,7 +43,7 @@
                 "bodyPadding": 10,
                 "designer|displayName": "cntPadron",
                 "header": false,
-                "height": 214,
+                "height": 213,
                 "layout": "anchor",
                 "title": "cntpanel"
             },

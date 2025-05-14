@@ -44,7 +44,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
     items: [
         {
             xtype: 'panel',
-            height: 214,
+            height: 213,
             layout: 'anchor',
             bodyPadding: 10,
             header: false,
