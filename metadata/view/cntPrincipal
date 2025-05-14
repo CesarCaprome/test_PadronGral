@@ -45,6 +45,9 @@
                 "header": false,
                 "height": 213,
                 "layout": "anchor",
+                "style": [
+                    "// gfgggg"
+                ],
                 "title": "cntpanel"
             },
             "configAlternates": {
@@ -53,7 +56,8 @@
                 "header": "boolean",
                 "height": "auto",
                 "layout": "string",
-                "title": "string"
+                "title": "string",
+                "style": "object"
             },
             "name": "MyPanel",
             "designerId": "b17ccd79-bb4a-4b0f-9a19-2ef4e2694ef9",

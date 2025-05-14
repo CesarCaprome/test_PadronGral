@@ -13,247 +13,247 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('App_Test_PadronGral.view.cntPrincipal', {
-    extend: 'Ext.window.Window',
-    alias: 'widget.cntprincipal',
+Ext.define("App_Test_PadronGral.view.cntPrincipal", {
+  extend: "Ext.window.Window",
+  alias: "widget.cntprincipal",
 
-    requires: [
-        'App_Test_PadronGral.view.cntPrincipalViewModel',
-        'Ext.form.FieldContainer',
-        'Ext.form.field.Number',
-        'Ext.button.Button',
-        'Ext.form.field.Checkbox',
-        'Ext.form.field.Date',
-        'Ext.grid.Panel',
-        'Ext.grid.column.Number',
-        'Ext.grid.column.Date',
-        'Ext.grid.column.Boolean',
-        'Ext.view.Table'
-    ],
+  requires: [
+    "App_Test_PadronGral.view.cntPrincipalViewModel",
+    "Ext.form.FieldContainer",
+    "Ext.form.field.Number",
+    "Ext.button.Button",
+    "Ext.form.field.Checkbox",
+    "Ext.form.field.Date",
+    "Ext.grid.Panel",
+    "Ext.grid.column.Number",
+    "Ext.grid.column.Date",
+    "Ext.grid.column.Boolean",
+    "Ext.view.Table",
+  ],
 
-    viewModel: {
-        type: 'cntprincipal'
-    },
-    autoShow: true,
-    height: 569,
-    width: 738,
-    bodyPadding: 3,
-    iconCls: 'x-fa fa-address-book',
-    title: 'Padron Gral',
+  viewModel: {
+    type: "cntprincipal",
+  },
+  autoShow: true,
+  height: 569,
+  width: 738,
+  bodyPadding: 3,
+  iconCls: "x-fa fa-address-book",
+  title: "Padron Gral",
 
-    items: [
+  items: [
+    {
+      xtype: "panel",
+      height: 213,
+      style: "// ver si pasa al sencha",
+      layout: "anchor",
+      bodyPadding: 10,
+      header: false,
+      title: "cntpanel",
+      items: [
         {
-            xtype: 'panel',
-            height: 213,
-            layout: 'anchor',
-            bodyPadding: 10,
-            header: false,
-            title: 'cntpanel',
-            items: [
-                {
-                    xtype: 'fieldcontainer',
-                    height: 40,
-                    itemId: 'cntCirMed',
-                    padding: '0 0 0 0',
-                    layout: 'column',
-                    items: [
-                        {
-                            xtype: 'numberfield',
-                            height: 39,
-                            itemId: 'numCM',
-                            width: 184,
-                            fieldLabel: 'Circulo Medico',
-                            maxValue: 99,
-                            minValue: 1
-                        },
-                        {
-                            xtype: 'button',
-                            height: 39,
-                            itemId: 'btnbuscar',
-                            width: 32,
-                            iconCls: 'x-fa fa-search',
-                            tooltip: 'Buscar...'
-                        },
-                        {
-                            xtype: 'textfield',
-                            height: 39,
-                            itemId: 'txtCirMed',
-                            width: 395,
-                            emptyText: '(Sin dato)'
-                        }
-                    ]
-                },
-                {
-                    xtype: 'fieldcontainer',
-                    height: 125,
-                    itemId: 'cntProf',
-                    margin: '20 0 0 0',
-                    width: 140,
-                    layout: {
-                        type: 'vbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        {
-                            xtype: 'checkboxfield',
-                            flex: 0,
-                            width: 32,
-                            fieldLabel: 'Medicos',
-                            labelWidth: 50
-                        },
-                        {
-                            xtype: 'checkboxfield',
-                            fieldLabel: 'Solo Veterinarios',
-                            labelWidth: 103
-                        },
-                        {
-                            xtype: 'checkboxfield',
-                            flex: 1,
-                            width: 32,
-                            fieldLabel: 'Solo Activos',
-                            labelWidth: 103
-                        }
-                    ]
-                },
-                {
-                    xtype: 'fieldcontainer',
-                    height: 39,
-                    itemId: 'cntFecha',
-                    margin: '-129 8 3 200',
-                    width: 182,
-                    layout: 'hbox',
-                    labelAlign: 'right',
-                    labelWidth: 50,
-                    items: [
-                        {
-                            xtype: 'datefield',
-                            flex: 1,
-                            padding: 3,
-                            width: 159,
-                            fieldLabel: 'Fecha',
-                            labelWidth: 38
-                        }
-                    ]
-                },
-                {
-                    xtype: 'fieldcontainer',
-                    height: 98,
-                    itemId: 'cntDatos',
-                    margin: '0 0 0 200',
-                    padding: 3,
-                    width: 182,
-                    labelAlign: 'right',
-                    labelWidth: 50,
-                    layout: {
-                        type: 'hbox',
-                        align: 'stretch'
-                    },
-                    items: [
-                        {
-                            xtype: 'checkboxfield',
-                            dock: 'top',
-                            itemId: 'CUIT',
-                            width: 66,
-                            fieldLabel: 'C.U.I.T',
-                            labelWidth: 66
-                        },
-                        {
-                            xtype: 'checkboxfield',
-                            dock: 'top',
-                            itemId: 'Nombre',
-                            margin: '30 0 0 -65',
-                            width: 70,
-                            fieldLabel: 'Nombre',
-                            labelWidth: 66
-                        }
-                    ]
-                }
-            ]
+          xtype: "fieldcontainer",
+          height: 40,
+          itemId: "cntCirMed",
+          padding: "0 0 0 0",
+          layout: "column",
+          items: [
+            {
+              xtype: "numberfield",
+              height: 39,
+              itemId: "numCM",
+              width: 184,
+              fieldLabel: "Circulo Medico",
+              maxValue: 99,
+              minValue: 1,
+            },
+            {
+              xtype: "button",
+              height: 39,
+              itemId: "btnbuscar",
+              width: 32,
+              iconCls: "x-fa fa-search",
+              tooltip: "Buscar...",
+            },
+            {
+              xtype: "textfield",
+              height: 39,
+              itemId: "txtCirMed",
+              width: 395,
+              emptyText: "(Sin dato)",
+            },
+          ],
         },
         {
-            xtype: 'gridpanel',
-            margin: '10 0 0 0',
-            style: {
-                borderTop: '2px solid #ADD8E6',
-                // Borde superior sólido
+          xtype: "fieldcontainer",
+          height: 125,
+          itemId: "cntProf",
+          margin: "20 0 0 0",
+          width: 140,
+          layout: {
+            type: "vbox",
+            align: "stretch",
+          },
+          items: [
+            {
+              xtype: "checkboxfield",
+              flex: 0,
+              width: 32,
+              fieldLabel: "Medicos",
+              labelWidth: 50,
             },
-            header: false,
-            title: 'My Grid Panel',
-            columns: [
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'string',
-                    text: 'String'
-                },
-                {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'number',
-                    text: 'Number'
-                },
-                {
-                    xtype: 'datecolumn',
-                    dataIndex: 'date',
-                    text: 'Date'
-                },
-                {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'bool',
-                    text: 'Boolean'
-                }
-            ]
-        }
-    ],
-    dockedItems: [
+            {
+              xtype: "checkboxfield",
+              fieldLabel: "Solo Veterinarios",
+              labelWidth: 103,
+            },
+            {
+              xtype: "checkboxfield",
+              flex: 1,
+              width: 32,
+              fieldLabel: "Solo Activos",
+              labelWidth: 103,
+            },
+          ],
+        },
         {
-            xtype: 'fieldcontainer',
-            dock: 'bottom',
-            height: 50,
-            itemId: 'cntAceptarCancelar',
-            margin: '0 0 0 0',
-            style: {
-                backgroundColor: 'transparent',
-                // Fondo transparente
-                borderTop: '2px solid #000',
-                // Borde superior sólido
-                boxShadow: '0px -2px 4px rgba(0, 0, 0, 0.2)',
-                // Sombra debajo del borde
+          xtype: "fieldcontainer",
+          height: 39,
+          itemId: "cntFecha",
+          margin: "-129 8 3 200",
+          width: 182,
+          layout: "hbox",
+          labelAlign: "right",
+          labelWidth: 50,
+          items: [
+            {
+              xtype: "datefield",
+              flex: 1,
+              padding: 3,
+              width: 159,
+              fieldLabel: "Fecha",
+              labelWidth: 38,
             },
-            width: 430,
-            layout: {
-                type: 'border',
-                padding: '4 4 4 4'
+          ],
+        },
+        {
+          xtype: "fieldcontainer",
+          height: 98,
+          itemId: "cntDatos",
+          margin: "0 0 0 200",
+          padding: 3,
+          width: 182,
+          labelAlign: "right",
+          labelWidth: 50,
+          layout: {
+            type: "hbox",
+            align: "stretch",
+          },
+          items: [
+            {
+              xtype: "checkboxfield",
+              dock: "top",
+              itemId: "CUIT",
+              width: 66,
+              fieldLabel: "C.U.I.T",
+              labelWidth: 66,
             },
-            items: [
-                {
-                    xtype: 'button',
-                    region: 'east',
-                    itemId: 'cmdAceptar',
-                    margin: '5 0 5 5',
-                    style: {
-                        'box-shadow': '0 2px 4px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2)',
-                        'border-radius': '1px 1px 1px 1px',
-                        
-                    },
-                    width: 94,
-                    iconCls: 'x-fa fa-check',
-                    text: 'Aceptar'
-                },
-                {
-                    xtype: 'button',
-                    region: 'east',
-                    itemId: 'cmdCancelar',
-                    margin: '5 0 5 6',
-                    style: {
-                        'box-shadow': '0 2px 4px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2)',
-                        'border-radius': '1px 1px 1px 1px',
-                        
-                    },
-                    width: 94,
-                    iconCls: 'x-fa fa-times',
-                    text: 'Cancelar'
-                }
-            ]
-        }
-    ]
-
+            {
+              xtype: "checkboxfield",
+              dock: "top",
+              itemId: "Nombre",
+              margin: "30 0 0 -65",
+              width: 70,
+              fieldLabel: "Nombre",
+              labelWidth: 66,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      xtype: "gridpanel",
+      margin: "10 0 0 0",
+      style: {
+        borderTop: "2px solid #ADD8E6",
+        // Borde superior sólido
+      },
+      header: false,
+      title: "My Grid Panel",
+      columns: [
+        {
+          xtype: "gridcolumn",
+          dataIndex: "string",
+          text: "String",
+        },
+        {
+          xtype: "numbercolumn",
+          dataIndex: "number",
+          text: "Number",
+        },
+        {
+          xtype: "datecolumn",
+          dataIndex: "date",
+          text: "Date",
+        },
+        {
+          xtype: "booleancolumn",
+          dataIndex: "bool",
+          text: "Boolean",
+        },
+      ],
+    },
+  ],
+  dockedItems: [
+    {
+      xtype: "fieldcontainer",
+      dock: "bottom",
+      height: 50,
+      itemId: "cntAceptarCancelar",
+      margin: "0 0 0 0",
+      style: {
+        backgroundColor: "transparent",
+        // Fondo transparente
+        borderTop: "2px solid #000",
+        // Borde superior sólido
+        boxShadow: "0px -2px 4px rgba(0, 0, 0, 0.2)",
+        // Sombra debajo del borde
+      },
+      width: 430,
+      layout: {
+        type: "border",
+        padding: "4 4 4 4",
+      },
+      items: [
+        {
+          xtype: "button",
+          region: "east",
+          itemId: "cmdAceptar",
+          margin: "5 0 5 5",
+          style: {
+            "box-shadow":
+              "0 2px 4px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2)",
+            "border-radius": "1px 1px 1px 1px",
+          },
+          width: 94,
+          iconCls: "x-fa fa-check",
+          text: "Aceptar",
+        },
+        {
+          xtype: "button",
+          region: "east",
+          itemId: "cmdCancelar",
+          margin: "5 0 5 6",
+          style: {
+            "box-shadow":
+              "0 2px 4px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2)",
+            "border-radius": "1px 1px 1px 1px",
+          },
+          width: 94,
+          iconCls: "x-fa fa-times",
+          text: "Cancelar",
+        },
+      ],
+    },
+  ],
 });
