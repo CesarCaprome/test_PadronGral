@@ -204,7 +204,25 @@
                                 "width": "auto"
                             },
                             "name": "MyCheckbox",
-                            "designerId": "73c446f0-9149-4e24-9a30-573b1a62548d"
+                            "designerId": "73c446f0-9149-4e24-9a30-573b1a62548d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "scope": "string"
+                                    },
+                                    "name": "BasicEventBinding",
+                                    "designerId": "115cda88-ce47-4b1d-ac4a-aa5ac6900748"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
