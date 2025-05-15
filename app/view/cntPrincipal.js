@@ -46,7 +46,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
         {
             xtype: 'panel',
             height: 213,
-            style: '// gfgggg',
+            style: '// esto es una modificacion desde el Architect',
             layout: 'anchor',
             bodyPadding: 10,
             header: false,
