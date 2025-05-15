@@ -346,7 +346,20 @@
                                         ],
                                         "fn": "processTxtFecha",
                                         "implHandler": [
-                                            "return config;"
+                                            "var hoy = new Date(),",
+                                            "\tdDesde = HS.GOMONTH(hoy,-4),",
+                                            "\tdDesde = new Date(dDesde.getFullYear(),dDesde.getMonth(),1);",
+                                            " ",
+                                            "config = config || {};",
+                                            " ",
+                                            "Ext.apply(config, {",
+                                            "\temptyText: Ext.util.Format.date(dDesde, 'd/m/Y'),",
+                                            "\tvalue: dDesde,",
+                                            "\tminValue: HS.GOMONTH(dDesde, -18),",
+                                            "\tmaxValue: hoy",
+                                            "});",
+                                            " return config;",
+                                            ""
                                         ]
                                     },
                                     "configAlternates": {

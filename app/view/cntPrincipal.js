@@ -280,7 +280,20 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
     },
 
     processTxtFecha: function(config) {
-        return config;
+        var hoy = new Date(),
+        	dDesde = HS.GOMONTH(hoy,-4),
+        	dDesde = new Date(dDesde.getFullYear(),dDesde.getMonth(),1);
+
+        config = config || {};
+
+        Ext.apply(config, {
+        	emptyText: Ext.util.Format.date(dDesde, 'd/m/Y'),
+        	value: dDesde,
+        	minValue: HS.GOMONTH(dDesde, -18),
+        	maxValue: hoy
+        });
+         return config;
+
     }
 
 });
