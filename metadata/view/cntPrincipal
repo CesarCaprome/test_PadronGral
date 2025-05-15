@@ -73,13 +73,14 @@
                         "height": 40,
                         "itemId": "cntCirMed",
                         "layout": "column",
-                        "padding": "0 0 0 0"
+                        "margin": "0 5 3 0"
                     },
                     "configAlternates": {
                         "height": "auto",
                         "itemId": "string",
                         "layout": "string",
-                        "padding": "auto"
+                        "padding": "auto",
+                        "margin": "auto"
                     },
                     "name": "MyFieldContainer",
                     "designerId": "b4cc51b1-9a73-4832-82f1-b95d2528e2ab",
@@ -93,8 +94,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Circulo Medico",
-                                "height": 39,
+                                "hideTrigger": true,
                                 "itemId": "numCM",
+                                "margin": "0 5 3 0",
                                 "maxValue": 99,
                                 "minValue": 1,
                                 "width": 184
@@ -105,7 +107,9 @@
                                 "itemId": "string",
                                 "maxValue": "number",
                                 "minValue": "number",
-                                "width": "auto"
+                                "width": "auto",
+                                "hideTrigger": "boolean",
+                                "margin": "auto"
                             },
                             "name": "MyNumberField",
                             "designerId": "2ee6bfde-20d4-4744-b0bd-0663f84421e9"
@@ -118,9 +122,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "height": 39,
+                                "height": 34,
                                 "iconCls": "x-fa fa-search",
                                 "itemId": "btnbuscar",
+                                "margin": "0 5 3 0",
                                 "tooltip": "Buscar...",
                                 "width": 32
                             },
@@ -129,7 +134,8 @@
                                 "iconCls": "string",
                                 "itemId": "string",
                                 "tooltip": "string",
-                                "width": "auto"
+                                "width": "auto",
+                                "margin": "auto"
                             },
                             "name": "MyButton",
                             "designerId": "5f68517b-f62c-4d93-b40b-57057a4e1965"
@@ -143,15 +149,16 @@
                             "codeClass": null,
                             "userConfig": {
                                 "emptyText": "(Sin dato)",
-                                "height": 39,
                                 "itemId": "txtCirMed",
+                                "margin": "0 5 3 0",
                                 "width": 395
                             },
                             "configAlternates": {
                                 "emptyText": "string",
                                 "height": "auto",
                                 "itemId": "string",
-                                "width": "auto"
+                                "width": "auto",
+                                "margin": "auto"
                             },
                             "name": "MyTextField",
                             "designerId": "f9fd8750-0650-466c-8b3d-2fe469816530"
@@ -167,7 +174,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "height": 125,
                         "itemId": "cntProf",
                         "layout": "vbox",
                         "margin": "20 0 0 0",
@@ -192,37 +198,29 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "disabled": [
+                                    "{chkVeterinarios.checket}"
+                                ],
                                 "fieldLabel": "Medicos",
+                                "itemId": "chkMedicos",
                                 "labelWidth": 50,
                                 "layout|flex": 0,
+                                "margin": "0 5 3 0",
+                                "reference": "chkMedicos",
                                 "width": 32
                             },
                             "configAlternates": {
                                 "fieldLabel": "string",
                                 "labelWidth": "number",
                                 "layout|flex": "number",
-                                "width": "auto"
+                                "width": "auto",
+                                "disabled": "binding",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "reference": "string"
                             },
                             "name": "MyCheckbox",
-                            "designerId": "73c446f0-9149-4e24-9a30-573b1a62548d",
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "scope": "me"
-                                    },
-                                    "configAlternates": {
-                                        "scope": "string"
-                                    },
-                                    "name": "BasicEventBinding",
-                                    "designerId": "115cda88-ce47-4b1d-ac4a-aa5ac6900748"
-                                }
-                            ]
+                            "designerId": "73c446f0-9149-4e24-9a30-573b1a62548d"
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -232,14 +230,24 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "disabled": [
+                                    "{chkMedicos.checket}"
+                                ],
                                 "fieldLabel": "Solo Veterinarios",
+                                "itemId": "chkVeterinarios",
                                 "labelWidth": 103,
-                                "layout|flex": null
+                                "layout|flex": null,
+                                "margin": "0 5 3 0",
+                                "reference": "chkVeterinarios"
                             },
                             "configAlternates": {
                                 "fieldLabel": "string",
                                 "labelWidth": "number",
-                                "layout|flex": "number"
+                                "layout|flex": "number",
+                                "disabled": "binding",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "reference": "string"
                             },
                             "name": "MyCheckbox1",
                             "designerId": "1f957a9f-5dfd-4bce-8dd8-5bfbb4957c67"
@@ -253,15 +261,18 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Solo Activos",
+                                "itemId": "chkActivos",
                                 "labelWidth": 103,
-                                "layout|flex": 1,
+                                "margin": "0 5 3 0",
                                 "width": 32
                             },
                             "configAlternates": {
                                 "fieldLabel": "string",
                                 "labelWidth": "number",
                                 "layout|flex": "number",
-                                "width": "auto"
+                                "width": "auto",
+                                "itemId": "string",
+                                "margin": "auto"
                             },
                             "name": "MyCheckbox2",
                             "designerId": "d2b1895c-76ff-4060-843e-7733844b2470"
@@ -281,7 +292,7 @@
                         "labelAlign": "right",
                         "labelWidth": 50,
                         "layout": "hbox",
-                        "margin": "-129 8 3 200",
+                        "margin": "-110 8 3 200",
                         "width": 182
                     },
                     "configAlternates": {
@@ -305,6 +316,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Fecha",
+                                "itemId": "txtFecha",
                                 "labelWidth": 38,
                                 "layout|flex": 1,
                                 "padding": 3,
@@ -315,10 +327,37 @@
                                 "labelWidth": "number",
                                 "layout|flex": "number",
                                 "width": "auto",
-                                "padding": "auto"
+                                "padding": "auto",
+                                "itemId": "string"
                             },
                             "name": "MyDateField",
-                            "designerId": "2c632dff-b0c9-4fd9-994a-2b1963b7dd11"
+                            "designerId": "2c632dff-b0c9-4fd9-994a-2b1963b7dd11",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processTxtFecha",
+                                        "implHandler": [
+                                            "return config;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "processTxtFecha",
+                                    "designerId": "d9c8cea8-6b29-4888-9f9f-9b89f0acb03c"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -331,10 +370,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "height": 98,
                         "itemId": "cntDatos",
                         "labelAlign": "right",
-                        "labelWidth": 50,
                         "layout": "hbox",
                         "margin": "0 0 0 200",
                         "padding": 3,
@@ -362,7 +399,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dock": "top",
+                                "dock": null,
                                 "fieldLabel": "C.U.I.T",
                                 "itemId": "CUIT",
                                 "labelWidth": 66,
@@ -388,7 +425,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dock": "top",
+                                "dock": null,
                                 "fieldLabel": "Nombre",
                                 "itemId": "Nombre",
                                 "labelWidth": 66,
@@ -468,11 +505,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "number",
+                        "flex": 1,
                         "text": "Number"
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "flex": "number"
                     },
                     "name": "MyNumberColumn",
                     "designerId": "ee214931-4b8d-475e-afc3-e315c46895c4"
