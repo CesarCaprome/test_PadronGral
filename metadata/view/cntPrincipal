@@ -346,19 +346,6 @@
                                         ],
                                         "fn": "processTxtFecha",
                                         "implHandler": [
-                                            "var hoy = new Date(),",
-                                            "\tdDesde = HS.GOMONTH(hoy,-4),",
-                                            "\tdDesde = new Date(dDesde.getFullYear(),dDesde.getMonth(),1);",
-                                            " ",
-                                            "config = config || {};",
-                                            " ",
-                                            "Ext.apply(config, {",
-                                            "\temptyText: Ext.util.Format.date(dDesde, 'd/m/Y'),",
-                                            "\tvalue: dDesde,",
-                                            "\tminValue: HS.GOMONTH(dDesde, -18),",
-                                            "\tmaxValue: hoy",
-                                            "});",
-                                            " return config;",
                                             ""
                                         ]
                                     },
@@ -414,9 +401,8 @@
                             "userConfig": {
                                 "dock": null,
                                 "fieldLabel": "C.U.I.T",
-                                "itemId": "CUIT",
+                                "itemId": "chkCUIT",
                                 "labelWidth": 66,
-                                "layout|flex": null,
                                 "width": 66
                             },
                             "configAlternates": {
@@ -440,7 +426,7 @@
                             "userConfig": {
                                 "dock": null,
                                 "fieldLabel": "Nombre",
-                                "itemId": "Nombre",
+                                "itemId": "chkNombre",
                                 "labelWidth": 66,
                                 "layout|flex": null,
                                 "margin": "30 0 0 -65",

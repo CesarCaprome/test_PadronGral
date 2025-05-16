@@ -104,14 +104,14 @@
         "model": true,
         "controller": true,
         "resource": true,
-        "8d7823a2-fe59-4f1a-a29c-9291df383b45": {
-            "id": "8d7823a2-fe59-4f1a-a29c-9291df383b45",
+        "f38522c8-98f0-45b6-9d10-d16d173ee17e": {
+            "id": "f38522c8-98f0-45b6-9d10-d16d173ee17e",
             "cn": [
                 {
-                    "id": "f2105069-3164-404b-96dd-b2bea35d5654",
+                    "id": "d18dc1c7-dfc5-4942-b440-451417da2c31",
                     "cn": [
                         {
-                            "id": "676545ca-acd8-4eb9-8b5a-45c67c282909"
+                            "id": "e8bd761b-08a0-4d52-ae20-a1f266f006d1"
                         }
                     ]
                 }
@@ -136,6 +136,6 @@
         "topInstance": "4e64aad3-0966-4bbd-96e3-74075f482bf0",
         "selectedInstance": "d9c8cea8-6b29-4888-9f9f-9b89f0acb03c"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {}
 }

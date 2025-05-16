@@ -221,14 +221,14 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                                 items: [
                                     {
                                         xtype: 'checkboxfield',
-                                        itemId: 'CUIT',
+                                        itemId: 'chkCUIT',
                                         width: 66,
                                         fieldLabel: 'C.U.I.T',
                                         labelWidth: 66
                                     },
                                     {
                                         xtype: 'checkboxfield',
-                                        itemId: 'Nombre',
+                                        itemId: 'chkNombre',
                                         margin: '30 0 0 -65',
                                         width: 70,
                                         fieldLabel: 'Nombre',
@@ -280,19 +280,6 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
     },
 
     processTxtFecha: function(config) {
-        var hoy = new Date(),
-        	dDesde = HS.GOMONTH(hoy,-4),
-        	dDesde = new Date(dDesde.getFullYear(),dDesde.getMonth(),1);
-
-        config = config || {};
-
-        Ext.apply(config, {
-        	emptyText: Ext.util.Format.date(dDesde, 'd/m/Y'),
-        	value: dDesde,
-        	minValue: HS.GOMONTH(dDesde, -18),
-        	maxValue: hoy
-        });
-         return config;
 
     }
 
