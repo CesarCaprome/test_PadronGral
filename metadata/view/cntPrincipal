@@ -46,7 +46,7 @@
                 "height": 213,
                 "layout": "anchor",
                 "style": [
-                    "// esto es una modificacion desde el Architect"
+                    "// Flag"
                 ],
                 "title": "cntpanel"
             },
