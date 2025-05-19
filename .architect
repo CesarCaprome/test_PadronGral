@@ -104,14 +104,14 @@
         "model": true,
         "controller": true,
         "resource": true,
-        "f38522c8-98f0-45b6-9d10-d16d173ee17e": {
-            "id": "f38522c8-98f0-45b6-9d10-d16d173ee17e",
+        "a566a666-ad19-49a8-9a6b-5bb0377a4a52": {
+            "id": "a566a666-ad19-49a8-9a6b-5bb0377a4a52",
             "cn": [
                 {
-                    "id": "d18dc1c7-dfc5-4942-b440-451417da2c31",
+                    "id": "319046f4-f8ed-446e-a14d-75c8e7b93bdc",
                     "cn": [
                         {
-                            "id": "e8bd761b-08a0-4d52-ae20-a1f266f006d1"
+                            "id": "713218c1-d79b-4b06-88f4-3207743ed93a"
                         }
                     ]
                 }
@@ -134,8 +134,8 @@
     },
     "inspectorState": {
         "topInstance": "4e64aad3-0966-4bbd-96e3-74075f482bf0",
-        "selectedInstance": "b17ccd79-bb4a-4b0f-9a19-2ef4e2694ef9"
+        "selectedInstance": "5462104b-1ba3-439b-88d9-d1824434824b"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {}
 }
