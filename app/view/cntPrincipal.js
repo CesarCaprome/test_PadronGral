@@ -25,9 +25,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
         'Ext.form.field.Checkbox',
         'Ext.form.field.Date',
         'Ext.grid.Panel',
-        'Ext.grid.column.Number',
-        'Ext.grid.column.Date',
-        'Ext.grid.column.Boolean',
+        'Ext.grid.column.Column',
         'Ext.view.Table'
     ],
 
@@ -240,36 +238,38 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                     },
                     {
                         xtype: 'gridpanel',
+                        height: 225,
                         margin: '10 0 0 0',
                         style: {
                             borderTop: '2px solid #ADD8E6',
                             // Borde superior sólido
                         },
                         header: false,
-                        title: 'My Grid Panel',
+                        title: 'Grid',
+                        store: 'dataStore',
                         columns: [
                             {
                                 xtype: 'gridcolumn',
-                                dataIndex: 'string',
-                                text: 'String'
+                                width: 203,
+                                dataIndex: 'apellidoNombre',
+                                text: 'Apellido Nombre'
                             },
                             {
-                                xtype: 'numbercolumn',
-                                flex: 1,
-                                dataIndex: 'number',
-                                text: 'Number'
+                                xtype: 'gridcolumn',
+                                width: 132,
+                                dataIndex: 'cuit',
+                                text: 'Cuit'
                             },
                             {
-                                xtype: 'datecolumn',
-                                dataIndex: 'date',
-                                text: 'Date'
-                            },
-                            {
-                                xtype: 'booleancolumn',
-                                dataIndex: 'bool',
-                                text: 'Boolean'
+                                xtype: 'gridcolumn',
+                                width: 170,
+                                dataIndex: 'fechaNacimiento',
+                                text: 'Fecha de Nacimiento'
                             }
-                        ]
+                        ],
+                        viewConfig: {
+                            itemId: 'tblGrid'
+                        }
                     }
                 ]
             };

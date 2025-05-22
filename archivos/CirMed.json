@@ -1,0 +1,22 @@
+[
+  {
+    "apellidoNombre": "Juan Pérez",
+    "cuit": "20-12345678-9",    
+    "fechaNacimiento": "1980-04-15"
+  },
+  {
+    "apellidoNombre": "María Gómez",
+    "cuit": "27-87654321-0",    
+    "fechaNacimiento": "1975-11-03"
+  },
+  {
+    "apellidoNombre": "Carlos Fernández",
+    "cuit": "23-23456789-4",   
+    "fechaNacimiento": "1990-06-25"
+  },
+  {
+    "apellidoNombre": "Lucía Martínez",
+    "cuit": "27-34567890-1",
+    "fechaNacimiento": "1985-09-12"
+  }
+]

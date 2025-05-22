@@ -6,14 +6,22 @@
     },
     "codeClass": null,
     "userConfig": {
+        "models": [
+            "datosJson"
+        ],
         "name": "App_Test_PadronGral",
+        "stores": [
+            "dataStore"
+        ],
         "views": [
             "cntPrincipal"
         ]
     },
     "configAlternates": {
         "name": "string",
-        "views": "typedarray"
+        "views": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
     },
     "name": "Application",
     "designerId": "application"
