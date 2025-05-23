@@ -32,7 +32,7 @@ Ext.define('App_Test_PadronGral.store.dataStore', {
             model: 'App_Test_PadronGral.model.datosJson',
             proxy: {
                 type: 'ajax',
-                url: 'archivos\CirMed.json',
+                url: '/archivos/CirMed.json',
                 reader: {
                     type: 'json'
                 }

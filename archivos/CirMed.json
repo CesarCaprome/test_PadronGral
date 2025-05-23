@@ -1,22 +1,27 @@
+
 [
-  {
-    "apellidoNombre": "Juan Pérez",
-    "cuit": "20-12345678-9",    
-    "fechaNacimiento": "1980-04-15"
-  },
-  {
-    "apellidoNombre": "María Gómez",
-    "cuit": "27-87654321-0",    
-    "fechaNacimiento": "1975-11-03"
-  },
-  {
-    "apellidoNombre": "Carlos Fernández",
-    "cuit": "23-23456789-4",   
-    "fechaNacimiento": "1990-06-25"
-  },
-  {
-    "apellidoNombre": "Lucía Martínez",
-    "cuit": "27-34567890-1",
-    "fechaNacimiento": "1985-09-12"
-  }
+  { "apellidoNombre": "Juan Pérez", "cuit": "20-12345678-9", "fechaNacimiento": "1980-04-15" },
+  { "apellidoNombre": "María Gómez", "cuit": "27-87654321-0", "fechaNacimiento": "1975-11-03" },
+  { "apellidoNombre": "Carlos Fernández", "cuit": "23-23456789-4", "fechaNacimiento": "1990-06-25" },
+  { "apellidoNombre": "Lucía Martínez", "cuit": "27-34567890-1", "fechaNacimiento": "1985-09-12" },
+  { "apellidoNombre": "Martín Rodríguez", "cuit": "20-56789012-3", "fechaNacimiento": "1992-07-14" },
+  { "apellidoNombre": "Ana Silva", "cuit": "27-67890123-4", "fechaNacimiento": "1988-03-22" },
+  { "apellidoNombre": "Pablo López", "cuit": "23-78901234-5", "fechaNacimiento": "1972-08-30" },
+  { "apellidoNombre": "Valentina Torres", "cuit": "20-89012345-6", "fechaNacimiento": "1995-06-10" },
+  { "apellidoNombre": "Gustavo Sánchez", "cuit": "27-90123456-7", "fechaNacimiento": "1983-01-05" },
+  { "apellidoNombre": "Camila Reyes", "cuit": "23-01234567-8", "fechaNacimiento": "1997-12-18" },
+  { "apellidoNombre": "Diego Herrera", "cuit": "20-12345679-0", "fechaNacimiento": "1979-11-11" },
+  { "apellidoNombre": "Florencia Domínguez", "cuit": "27-23456780-1", "fechaNacimiento": "1991-05-07" },
+  { "apellidoNombre": "Javier Molina", "cuit": "23-34567891-2", "fechaNacimiento": "1984-09-23" },
+  { "apellidoNombre": "Lorena Castro", "cuit": "20-45678902-3", "fechaNacimiento": "1993-02-27" },
+  { "apellidoNombre": "Federico Méndez", "cuit": "27-56789013-4", "fechaNacimiento": "1980-10-14" },
+  { "apellidoNombre": "Sofía Acosta", "cuit": "23-67890124-5", "fechaNacimiento": "1977-04-09" },
+  { "apellidoNombre": "Agustín Vera", "cuit": "20-78901235-6", "fechaNacimiento": "1994-07-01" },
+  { "apellidoNombre": "Carolina Paredes", "cuit": "27-89012346-7", "fechaNacimiento": "1986-06-19" },
+  { "apellidoNombre": "Hernán Gallardo", "cuit": "23-90123457-8", "fechaNacimiento": "1998-05-29" },
+  { "apellidoNombre": "Patricia Figueroa", "cuit": "20-01234568-9", "fechaNacimiento": "1973-03-17" },
+  { "apellidoNombre": "Leonardo Arias", "cuit": "27-12345679-0", "fechaNacimiento": "1990-08-08" },
+  { "apellidoNombre": "Gabriela Espinoza", "cuit": "23-23456780-1", "fechaNacimiento": "1982-02-04" },
+  { "apellidoNombre": "Ricardo Peña", "cuit": "20-34567891-2", "fechaNacimiento": "1976-09-13" },
+  { "apellidoNombre": "Natalia Guzmán", "cuit": "27-45678902-3", "fechaNacimiento": "1996-01-21" }
 ]

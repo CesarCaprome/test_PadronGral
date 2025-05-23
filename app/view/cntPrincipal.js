@@ -238,6 +238,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                     },
                     {
                         xtype: 'gridpanel',
+                        flex: 1,
                         height: 225,
                         margin: '10 0 0 0',
                         style: {
@@ -250,21 +251,21 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                         columns: [
                             {
                                 xtype: 'gridcolumn',
-                                width: 203,
+                                width: 198,
                                 dataIndex: 'apellidoNombre',
                                 text: 'Apellido Nombre'
                             },
                             {
                                 xtype: 'gridcolumn',
-                                width: 132,
+                                width: 165,
                                 dataIndex: 'cuit',
                                 text: 'Cuit'
                             },
                             {
                                 xtype: 'gridcolumn',
-                                width: 170,
+                                width: 130,
                                 dataIndex: 'fechaNacimiento',
-                                text: 'Fecha de Nacimiento'
+                                text: 'Fecha Nacimiento'
                             }
                         ],
                         viewConfig: {

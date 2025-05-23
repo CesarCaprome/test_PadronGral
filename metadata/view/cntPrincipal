@@ -456,6 +456,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "flex": 1,
                 "header": false,
                 "height": 225,
                 "margin": "10 0 0 0",
@@ -476,7 +477,8 @@
                 "style": "object",
                 "margin": "auto",
                 "height": "auto",
-                "store": "store"
+                "store": "store",
+                "flex": "number"
             },
             "name": "MyGridPanel",
             "designerId": "05e791b8-d936-4970-a0cf-15807506612d",
@@ -491,15 +493,15 @@
                     "userConfig": {
                         "dataIndex": "apellidoNombre",
                         "text": "Apellido Nombre",
-                        "width": 203
+                        "width": 198
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "text": "string",
                         "width": "auto"
                     },
-                    "name": "MyColumn",
-                    "designerId": "9e692b29-ba3f-49c7-af44-726831dabd02"
+                    "name": "MyColumn1",
+                    "designerId": "8bcbf1ff-55da-4390-9919-88f93a19f4cc"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -511,15 +513,15 @@
                     "userConfig": {
                         "dataIndex": "cuit",
                         "text": "Cuit",
-                        "width": 132
+                        "width": 165
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "text": "string",
                         "width": "auto"
                     },
-                    "name": "MyColumn3",
-                    "designerId": "5df171d6-f615-4205-9979-5a2d9c47898c"
+                    "name": "MyColumn2",
+                    "designerId": "2486c216-ca8d-407b-bf65-60a1b95e7cf6"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -530,16 +532,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "fechaNacimiento",
-                        "text": "Fecha de Nacimiento",
-                        "width": 170
+                        "text": "Fecha Nacimiento",
+                        "width": 130
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "text": "string",
                         "width": "auto"
                     },
-                    "name": "MyColumn5",
-                    "designerId": "7ba9d61b-dcca-4aad-8c32-4c4f3a7c2c15"
+                    "name": "MyColumn4",
+                    "designerId": "b58aff1b-58f3-42ea-b2d6-c3d4eb0d7e3d"
                 },
                 {
                     "type": "Ext.view.Table",
