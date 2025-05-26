@@ -76,6 +76,10 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                 },
                 {
                     xtype: 'button',
+                    handler: function(button, e) {
+                        button.ownerCt.ownerCt.close();
+
+                    },
                     region: 'east',
                     itemId: 'cmdCancelar',
                     margin: '5 0 5 6',
@@ -99,7 +103,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                     {
                         xtype: 'panel',
                         height: 213,
-                        style: '// Flag',
+                        style: '// ver si sale en VSC',
                         layout: 'anchor',
                         bodyPadding: 10,
                         header: false,

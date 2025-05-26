@@ -46,7 +46,7 @@
                 "height": 213,
                 "layout": "anchor",
                 "style": [
-                    "// Flag"
+                    "// ver si sale en VSC"
                 ],
                 "title": "cntpanel"
             },
@@ -662,7 +662,35 @@
                         "width": "auto"
                     },
                     "name": "MyButton2",
-                    "designerId": "b85dfd4e-6bcb-450e-a3a2-d669db093d04"
+                    "designerId": "b85dfd4e-6bcb-450e-a3a2-d669db093d04",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "button.ownerCt.ownerCt.close();",
+                                    ""
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "6951ede0-9b51-479d-9016-10f64231b7ac"
+                        }
+                    ]
                 }
             ]
         }
