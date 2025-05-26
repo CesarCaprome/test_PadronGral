@@ -164,7 +164,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                                         fieldLabel: 'Medicos',
                                         labelWidth: 50,
                                         bind: {
-                                            disabled: '{chkVeterinarios.checket}'
+                                            disabled: '{chkVeterinarios.checked}'
                                         }
                                     },
                                     {
@@ -175,16 +175,20 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                                         fieldLabel: 'Solo Veterinarios',
                                         labelWidth: 103,
                                         bind: {
-                                            disabled: '{chkMedicos.checket}'
+                                            disabled: '{chkMedicos.checked}'
                                         }
                                     },
                                     {
                                         xtype: 'checkboxfield',
+                                        reference: 'chkActivos',
                                         itemId: 'chkActivos',
                                         margin: '0 5 3 0',
                                         width: 32,
                                         fieldLabel: 'Solo Activos',
-                                        labelWidth: 103
+                                        labelWidth: 103,
+                                        bind: {
+                                            disabled: '{!chkMedicos.checked && !chkVeterinarios.checked}'
+                                        }
                                     }
                                 ]
                             },

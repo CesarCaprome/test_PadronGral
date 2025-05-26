@@ -199,7 +199,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "disabled": [
-                                    "{chkVeterinarios.checket}"
+                                    "{chkVeterinarios.checked}"
                                 ],
                                 "fieldLabel": "Medicos",
                                 "itemId": "chkMedicos",
@@ -231,7 +231,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "disabled": [
-                                    "{chkMedicos.checket}"
+                                    "{chkMedicos.checked}"
                                 ],
                                 "fieldLabel": "Solo Veterinarios",
                                 "itemId": "chkVeterinarios",
@@ -260,10 +260,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "disabled": [
+                                    "{!chkMedicos.checked && !chkVeterinarios.checked}"
+                                ],
                                 "fieldLabel": "Solo Activos",
                                 "itemId": "chkActivos",
                                 "labelWidth": 103,
                                 "margin": "0 5 3 0",
+                                "reference": "chkActivos",
                                 "width": 32
                             },
                             "configAlternates": {
@@ -272,7 +276,9 @@
                                 "layout|flex": "number",
                                 "width": "auto",
                                 "itemId": "string",
-                                "margin": "auto"
+                                "margin": "auto",
+                                "disabled": "binding",
+                                "reference": "string"
                             },
                             "name": "MyCheckbox2",
                             "designerId": "d2b1895c-76ff-4060-843e-7733844b2470"
