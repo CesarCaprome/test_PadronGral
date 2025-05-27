@@ -220,7 +220,12 @@
                                 "reference": "string"
                             },
                             "name": "MyCheckbox",
-                            "designerId": "73c446f0-9149-4e24-9a30-573b1a62548d"
+                            "designerId": "73c446f0-9149-4e24-9a30-573b1a62548d",
+                            "configMeta": {
+                                "disabled": {
+                                    "bindDeep": true
+                                }
+                            }
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -250,7 +255,12 @@
                                 "reference": "string"
                             },
                             "name": "MyCheckbox1",
-                            "designerId": "1f957a9f-5dfd-4bce-8dd8-5bfbb4957c67"
+                            "designerId": "1f957a9f-5dfd-4bce-8dd8-5bfbb4957c67",
+                            "configMeta": {
+                                "disabled": {
+                                    "bindDeep": true
+                                }
+                            }
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -261,7 +271,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "disabled": [
-                                    "{!chkMedicos.checked && !chkVeterinarios.checked}"
+                                    "{chkMedicos.checked && chkVeterinarios.checked}"
                                 ],
                                 "fieldLabel": "Solo Activos",
                                 "itemId": "chkActivos",
