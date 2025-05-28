@@ -271,7 +271,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "disabled": [
-                                    "{chkMedicos.checked && chkVeterinarios.checked}"
+                                    "{!chkMedicos.checked && !chkVeterinarios.checked}"
                                 ],
                                 "fieldLabel": "Solo Activos",
                                 "itemId": "chkActivos",
@@ -291,7 +291,12 @@
                                 "reference": "string"
                             },
                             "name": "MyCheckbox2",
-                            "designerId": "d2b1895c-76ff-4060-843e-7733844b2470"
+                            "designerId": "d2b1895c-76ff-4060-843e-7733844b2470",
+                            "configMeta": {
+                                "disabled": {
+                                    "bindDeep": true
+                                }
+                            }
                         }
                     ]
                 },

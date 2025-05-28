@@ -193,7 +193,10 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                                         fieldLabel: 'Solo Activos',
                                         labelWidth: 103,
                                         bind: {
-                                            disabled: '{chkMedicos.checked && chkVeterinarios.checked}'
+                                            disabled: {
+                                                bindTo: '{!chkMedicos.checked && !chkVeterinarios.checked}',
+                                                deep: true
+                                            }
                                         }
                                     }
                                 ]
