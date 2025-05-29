@@ -14,7 +14,7 @@
         "height": 569,
         "iconCls": "x-fa fa-address-book",
         "title": "Padron Gral",
-        "width": 738
+        "width": 668
     },
     "configAlternates": {
         "autoShow": "boolean",
@@ -367,7 +367,24 @@
                                         ],
                                         "fn": "processTxtFecha",
                                         "implHandler": [
-                                            ""
+                                            "\t/*",
+                                            "",
+                                            "var hoy = new Date(),",
+                                            "\tdDesde = HS.GOMONTH(hoy,-4),",
+                                            "\tdDesde = new Date(dDesde.getFullYear(),dDesde.getMonth(),1);",
+                                            " ",
+                                            "config = config || {};",
+                                            " ",
+                                            "Ext.apply(config, {",
+                                            "\temptyText: Ext.util.Format.date(dDesde, 'd/m/Y'),",
+                                            "\tvalue: dDesde,",
+                                            "\tminValue: HS.GOMONTH(dDesde, -18),",
+                                            "\tmaxValue: hoy",
+                                            "});",
+                                            " ",
+                                            "return config",
+                                            "*/",
+                                            "return config;"
                                         ]
                                     },
                                     "configAlternates": {
@@ -376,7 +393,7 @@
                                         "implHandler": "code"
                                     },
                                     "name": "processTxtFecha",
-                                    "designerId": "d9c8cea8-6b29-4888-9f9f-9b89f0acb03c"
+                                    "designerId": "d9937716-fe41-488c-87d1-b7c5aa88d5d1"
                                 }
                             ]
                         }
