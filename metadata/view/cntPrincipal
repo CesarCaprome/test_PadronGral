@@ -437,10 +437,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "disabled": [
+                                    "{chkNombre.checked}"
+                                ],
                                 "dock": null,
                                 "fieldLabel": "C.U.I.T",
                                 "itemId": "chkCUIT",
                                 "labelWidth": 66,
+                                "reference": "chkCUIT",
                                 "width": 66
                             },
                             "configAlternates": {
@@ -449,10 +453,17 @@
                                 "itemId": "string",
                                 "labelWidth": "number",
                                 "layout|flex": "number",
-                                "width": "auto"
+                                "width": "auto",
+                                "disabled": "binding",
+                                "reference": "string"
                             },
                             "name": "MyCheckbox3",
-                            "designerId": "d29739f6-3387-4a21-9302-1d493929b038"
+                            "designerId": "d29739f6-3387-4a21-9302-1d493929b038",
+                            "configMeta": {
+                                "disabled": {
+                                    "bindDeep": true
+                                }
+                            }
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -462,12 +473,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "disabled": [
+                                    "{chkCUIT.checked}"
+                                ],
                                 "dock": null,
                                 "fieldLabel": "Nombre",
                                 "itemId": "chkNombre",
                                 "labelWidth": 66,
                                 "layout|flex": null,
                                 "margin": "30 0 0 -65",
+                                "reference": "chkNombre",
                                 "width": 70
                             },
                             "configAlternates": {
@@ -477,10 +492,17 @@
                                 "labelWidth": "number",
                                 "layout|flex": "number",
                                 "margin": "auto",
-                                "width": "auto"
+                                "width": "auto",
+                                "disabled": "binding",
+                                "reference": "string"
                             },
                             "name": "MyCheckbox4",
-                            "designerId": "cbe8a2b8-df92-4f78-81b2-5f7a62a3e3cd"
+                            "designerId": "cbe8a2b8-df92-4f78-81b2-5f7a62a3e3cd",
+                            "configMeta": {
+                                "disabled": {
+                                    "bindDeep": true
+                                }
+                            }
                         }
                     ]
                 }

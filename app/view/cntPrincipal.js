@@ -236,18 +236,32 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                                 items: [
                                     {
                                         xtype: 'checkboxfield',
+                                        reference: 'chkCUIT',
                                         itemId: 'chkCUIT',
                                         width: 66,
                                         fieldLabel: 'C.U.I.T',
-                                        labelWidth: 66
+                                        labelWidth: 66,
+                                        bind: {
+                                            disabled: {
+                                                bindTo: '{chkNombre.checked}',
+                                                deep: true
+                                            }
+                                        }
                                     },
                                     {
                                         xtype: 'checkboxfield',
+                                        reference: 'chkNombre',
                                         itemId: 'chkNombre',
                                         margin: '30 0 0 -65',
                                         width: 70,
                                         fieldLabel: 'Nombre',
-                                        labelWidth: 66
+                                        labelWidth: 66,
+                                        bind: {
+                                            disabled: {
+                                                bindTo: '{chkCUIT.checked}',
+                                                deep: true
+                                            }
+                                        }
                                     }
                                 ]
                             }
