@@ -552,7 +552,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "apellidoNombre",
-                        "text": "Apellido Nombre",
+                        "text": "Apellido y Nombre",
                         "width": 170
                     },
                     "configAlternates": {
@@ -572,7 +572,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "cuit",
-                        "text": "Cuit",
+                        "text": "CUIT",
                         "width": 137
                     },
                     "configAlternates": {
@@ -592,7 +592,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "fechaNacimiento",
-                        "text": "Fecha Nacimiento",
+                        "text": "Fecha de Nacimiento",
                         "width": 220
                     },
                     "configAlternates": {

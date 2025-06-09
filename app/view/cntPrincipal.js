@@ -284,19 +284,19 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                                 xtype: 'gridcolumn',
                                 width: 170,
                                 dataIndex: 'apellidoNombre',
-                                text: 'Apellido Nombre'
+                                text: 'Apellido y Nombre'
                             },
                             {
                                 xtype: 'gridcolumn',
                                 width: 137,
                                 dataIndex: 'cuit',
-                                text: 'Cuit'
+                                text: 'CUIT'
                             },
                             {
                                 xtype: 'gridcolumn',
                                 width: 220,
                                 dataIndex: 'fechaNacimiento',
-                                text: 'Fecha Nacimiento'
+                                text: 'Fecha de Nacimiento'
                             }
                         ],
                         viewConfig: {
