@@ -23,7 +23,6 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
         'Ext.form.field.Number',
         'Ext.button.Button',
         'Ext.form.field.Checkbox',
-        'Ext.form.field.Date',
         'Ext.grid.Panel',
         'Ext.grid.column.Column',
         'Ext.view.Table'
@@ -102,7 +101,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                 items: [
                     {
                         xtype: 'panel',
-                        height: 213,
+                        height: 273,
                         style: '// ver si sale en VSC',
                         layout: 'anchor',
                         bodyPadding: 10,
@@ -122,8 +121,9 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                                         margin: '0 5 3 0',
                                         width: 184,
                                         fieldLabel: 'Circulo Medico',
+                                        blankText: 'Ingrese Numero de CM',
                                         hideTrigger: true,
-                                        maxValue: 99,
+                                        maxValue: 999,
                                         minValue: 1
                                     },
                                     {
@@ -203,23 +203,37 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                             },
                             {
                                 xtype: 'fieldcontainer',
-                                height: 39,
+                                height: 76,
                                 itemId: 'cntFecha',
                                 margin: '-110 8 3 200',
-                                width: 182,
-                                layout: 'hbox',
+                                width: 283,
                                 labelAlign: 'right',
                                 labelWidth: 50,
+                                layout: {
+                                    type: 'vbox',
+                                    align: 'stretch'
+                                },
                                 items: [
-                                    me.processTxtFecha({
-                                        xtype: 'datefield',
+                                    me.processTxtAnio({
+                                        xtype: 'numberfield',
                                         flex: 1,
-                                        itemId: 'txtFecha',
-                                        padding: 3,
-                                        width: 159,
-                                        fieldLabel: 'Fecha',
-                                        labelWidth: 38
-                                    })
+                                        dock: 'top',
+                                        itemId: 'txtAnio',
+                                        fieldLabel: 'Año',
+                                        name: 'anio'
+                                    }),
+                                    {
+                                        xtype: 'numberfield',
+                                        flex: 1,
+                                        dock: 'top',
+                                        itemId: 'txtMes',
+                                        width: 193,
+                                        fieldLabel: 'Mes',
+                                        name: 'mes',
+                                        invalidText: 'El Valor de este Campo no es valido',
+                                        allowDecimals: false,
+                                        allowExponential: false
+                                    }
                                 ]
                             },
                             {
@@ -311,23 +325,10 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
         return me.callParent([config]);
     },
 
-    processTxtFecha: function(config) {
-        	/*
+    processTxtAnio: function(config) {
+        /*
 
-        var hoy = new Date(),
-        	dDesde = HS.GOMONTH(hoy,-4),
-        	dDesde = new Date(dDesde.getFullYear(),dDesde.getMonth(),1);
 
-        config = config || {};
-
-        Ext.apply(config, {
-        	emptyText: Ext.util.Format.date(dDesde, 'd/m/Y'),
-        	value: dDesde,
-        	minValue: HS.GOMONTH(dDesde, -18),
-        	maxValue: hoy
-        });
-
-        return config
         */
         return config;
     }

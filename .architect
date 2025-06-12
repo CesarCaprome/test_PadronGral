@@ -39,12 +39,15 @@
                             "id": "09cd2625-0add-4392-87d8-fcca9080ea08",
                             "cn": [
                                 {
-                                    "id": "2c632dff-b0c9-4fd9-994a-2b1963b7dd11",
+                                    "id": "cf0a6de3-355e-4ff2-ab89-08df3bb98dcc",
                                     "cn": [
                                         {
-                                            "id": "d9937716-fe41-488c-87d1-b7c5aa88d5d1"
+                                            "id": "965d1517-0b04-488d-b7ea-384033b7b6be"
                                         }
                                     ]
+                                },
+                                {
+                                    "id": "b04512d8-dc97-40b9-93a8-99fb32d45e70"
                                 }
                             ]
                         },
@@ -133,14 +136,14 @@
         },
         "controller": true,
         "resource": true,
-        "e1b583bd-2dd7-4c0d-885b-ad5f1b65ef97": {
-            "id": "e1b583bd-2dd7-4c0d-885b-ad5f1b65ef97",
+        "4fa15bef-7fcc-4387-9cc0-5e9fd3a93247": {
+            "id": "4fa15bef-7fcc-4387-9cc0-5e9fd3a93247",
             "cn": [
                 {
-                    "id": "e33c3316-a066-4199-95c0-2c494dbc2516",
+                    "id": "ab1cea9a-8819-4dc4-94a6-0a377d89d467",
                     "cn": [
                         {
-                            "id": "20b85664-228a-4453-a3ed-6607745d58bc"
+                            "id": "eebc8af0-6baf-47d6-afaf-06564f601ad3"
                         }
                     ]
                 }
@@ -159,12 +162,12 @@
         ]
     },
     "canvasState": {
-        "topInstance": "4e64aad3-0966-4bbd-96e3-74075f482bf0"
+        "topInstance": null
     },
     "inspectorState": {
         "topInstance": "4e64aad3-0966-4bbd-96e3-74075f482bf0",
-        "selectedInstance": "58e0629c-2000-490c-b7d3-e6f6ad8f3cae"
+        "selectedInstance": "965d1517-0b04-488d-b7ea-384033b7b6be"
     },
-    "editMode": "design",
+    "editMode": "code",
     "userSettings": {}
 }
