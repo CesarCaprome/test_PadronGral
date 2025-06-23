@@ -101,7 +101,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                 items: [
                     {
                         xtype: 'panel',
-                        height: 273,
+                        height: 372,
                         style: '// ver si sale en VSC',
                         layout: 'anchor',
                         bodyPadding: 10,
@@ -146,6 +146,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                             },
                             {
                                 xtype: 'fieldcontainer',
+                                height: 109,
                                 itemId: 'cntProf',
                                 margin: '20 0 0 0',
                                 width: 140,
@@ -238,6 +239,7 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                             },
                             {
                                 xtype: 'fieldcontainer',
+                                height: 89,
                                 itemId: 'cntDatos',
                                 margin: '0 0 0 200',
                                 padding: 3,
@@ -276,6 +278,38 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                                                 deep: true
                                             }
                                         }
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'fieldcontainer',
+                                height: 75,
+                                margin: '0 5 3 0',
+                                width: 580,
+                                fieldLabel: 'Tipo de Consulta',
+                                layout: {
+                                    type: 'hbox',
+                                    align: 'stretch'
+                                },
+                                items: [
+                                    {
+                                        xtype: 'checkboxfield',
+                                        flex: 1,
+                                        anchor: '',
+                                        flex: 1,
+                                        height: 22,
+                                        liquidLayout: false,
+                                        margin: '0 5 3 0',
+                                        width: 150,
+                                        fieldLabel: 'Cantidades',
+                                        boxLabel: ''
+                                    },
+                                    {
+                                        xtype: 'checkboxfield',
+                                        flex: 0,
+                                        flex: 0,
+                                        fieldLabel: 'Padrón',
+                                        boxLabel: ''
                                     }
                                 ]
                             }

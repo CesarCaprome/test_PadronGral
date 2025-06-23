@@ -43,7 +43,7 @@
                 "bodyPadding": 10,
                 "designer|displayName": "cntPadron",
                 "header": false,
-                "height": 273,
+                "height": 372,
                 "layout": "anchor",
                 "style": [
                     "// ver si sale en VSC"
@@ -176,6 +176,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
+                        "height": 109,
                         "itemId": "cntProf",
                         "layout": "vbox",
                         "margin": "20 0 0 0",
@@ -429,6 +430,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
+                        "height": 89,
                         "itemId": "cntDatos",
                         "labelAlign": "right",
                         "layout": "hbox",
@@ -524,6 +526,94 @@
                                     "bindDeep": true
                                 }
                             }
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "dock": null,
+                        "fieldLabel": "Tipo de Consulta",
+                        "height": 75,
+                        "layout": "hbox",
+                        "margin": "0 5 3 0",
+                        "width": 580
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "dock": "string",
+                        "fieldLabel": "string",
+                        "height": "auto",
+                        "layout": "string",
+                        "margin": "auto",
+                        "width": "auto"
+                    },
+                    "name": "MyFieldContainer5",
+                    "designerId": "753a47f6-0408-45bf-a9b4-571c99740e6a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "anchor": "",
+                                "boxLabel": "",
+                                "dock": null,
+                                "fieldLabel": "Cantidades",
+                                "flex": 1,
+                                "height": 22,
+                                "layout|flex": 1,
+                                "liquidLayout": false,
+                                "margin": "0 5 3 0",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "anchor": "string",
+                                "boxLabel": "string",
+                                "dock": "string",
+                                "fieldLabel": "string",
+                                "flex": "number",
+                                "height": "auto",
+                                "layout|flex": "number",
+                                "liquidLayout": "boolean",
+                                "margin": "auto",
+                                "width": "auto"
+                            },
+                            "name": "MyCheckbox5",
+                            "designerId": "1b150de4-340a-43d3-9142-d2d418b578cb"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "dock": null,
+                                "fieldLabel": "Padrón",
+                                "flex": 0,
+                                "layout|flex": 0
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|flex": "number",
+                                "dock": "string",
+                                "flex": "number"
+                            },
+                            "name": "MyCheckbox6",
+                            "designerId": "7335e5e3-a0f0-4060-ab5f-d2dc3bbae677"
                         }
                     ]
                 }
