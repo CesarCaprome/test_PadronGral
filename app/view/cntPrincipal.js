@@ -283,33 +283,34 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                             },
                             {
                                 xtype: 'fieldcontainer',
-                                height: 75,
-                                margin: '0 5 3 0',
-                                width: 580,
+                                height: 53,
+                                width: 541,
+                                layout: 'hbox',
                                 fieldLabel: 'Tipo de Consulta',
-                                layout: {
-                                    type: 'hbox',
-                                    align: 'stretch'
-                                },
+                                labelWidth: 80,
                                 items: [
                                     {
                                         xtype: 'checkboxfield',
                                         flex: 1,
                                         anchor: '',
-                                        flex: 1,
                                         height: 22,
                                         liquidLayout: false,
-                                        margin: '0 5 3 0',
+                                        margin: '0 60 30 0',
                                         width: 150,
                                         fieldLabel: 'Cantidades',
+                                        labelWidth: 70,
                                         boxLabel: ''
                                     },
                                     {
                                         xtype: 'checkboxfield',
-                                        flex: 0,
-                                        flex: 0,
-                                        fieldLabel: 'Padrón',
-                                        boxLabel: ''
+                                        flex: 1,
+                                        anchor: '',
+                                        height: 22,
+                                        liquidLayout: false,
+                                        margin: '0 300 30 0',
+                                        width: 150,
+                                        fieldLabel: 'Padron',
+                                        labelWidth: 55
                                     }
                                 ]
                             }

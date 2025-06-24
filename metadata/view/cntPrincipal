@@ -537,13 +537,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "container|align": "stretch",
                         "dock": null,
                         "fieldLabel": "Tipo de Consulta",
-                        "height": 75,
+                        "height": 53,
+                        "labelWidth": 80,
                         "layout": "hbox",
-                        "margin": "0 5 3 0",
-                        "width": 580
+                        "width": 541
                     },
                     "configAlternates": {
                         "container|align": "string",
@@ -552,7 +551,8 @@
                         "height": "auto",
                         "layout": "string",
                         "margin": "auto",
-                        "width": "auto"
+                        "width": "auto",
+                        "labelWidth": "number"
                     },
                     "name": "MyFieldContainer5",
                     "designerId": "753a47f6-0408-45bf-a9b4-571c99740e6a",
@@ -569,11 +569,11 @@
                                 "boxLabel": "",
                                 "dock": null,
                                 "fieldLabel": "Cantidades",
-                                "flex": 1,
                                 "height": 22,
+                                "labelWidth": 70,
                                 "layout|flex": 1,
                                 "liquidLayout": false,
-                                "margin": "0 5 3 0",
+                                "margin": "0 60 30 0",
                                 "width": 150
                             },
                             "configAlternates": {
@@ -586,7 +586,8 @@
                                 "layout|flex": "number",
                                 "liquidLayout": "boolean",
                                 "margin": "auto",
-                                "width": "auto"
+                                "width": "auto",
+                                "labelWidth": "number"
                             },
                             "name": "MyCheckbox5",
                             "designerId": "1b150de4-340a-43d3-9142-d2d418b578cb"
@@ -599,21 +600,31 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "boxLabel": "",
+                                "anchor": "",
                                 "dock": null,
-                                "fieldLabel": "Padrón",
-                                "flex": 0,
-                                "layout|flex": 0
+                                "fieldLabel": "Padron",
+                                "height": 22,
+                                "labelWidth": 55,
+                                "layout|flex": 1,
+                                "liquidLayout": false,
+                                "margin": "0 300 30 0",
+                                "width": 150
                             },
                             "configAlternates": {
+                                "anchor": "string",
                                 "boxLabel": "string",
-                                "fieldLabel": "string",
-                                "layout|flex": "number",
                                 "dock": "string",
-                                "flex": "number"
+                                "fieldLabel": "string",
+                                "flex": "number",
+                                "height": "auto",
+                                "layout|flex": "number",
+                                "liquidLayout": "boolean",
+                                "margin": "auto",
+                                "width": "auto",
+                                "labelWidth": "number"
                             },
                             "name": "MyCheckbox6",
-                            "designerId": "7335e5e3-a0f0-4060-ab5f-d2dc3bbae677"
+                            "designerId": "e9c48008-4c8e-45b3-818a-f128d18d0967"
                         }
                     ]
                 }
