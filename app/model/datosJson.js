@@ -29,6 +29,9 @@ Ext.define('App_Test_PadronGral.model.datosJson', {
         },
         {
             name: 'fechaNacimiento'
+        },
+        {
+            name: 'localidad'
         }
     ]
 });

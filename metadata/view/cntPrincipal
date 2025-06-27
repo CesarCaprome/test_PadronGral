@@ -14,7 +14,7 @@
         "height": 569,
         "iconCls": "x-fa fa-address-book",
         "title": "Padron Gral",
-        "width": 668
+        "width": 620
     },
     "configAlternates": {
         "autoShow": "boolean",
@@ -43,12 +43,13 @@
                 "bodyPadding": 10,
                 "designer|displayName": "cntPadron",
                 "header": false,
-                "height": 372,
+                "height": 300,
                 "layout": "anchor",
                 "style": [
                     "// ver si sale en VSC"
                 ],
-                "title": "cntpanel"
+                "title": "cntpanel",
+                "width": 658
             },
             "configAlternates": {
                 "bodyPadding": "auto",
@@ -57,7 +58,8 @@
                 "height": "auto",
                 "layout": "string",
                 "title": "string",
-                "style": "object"
+                "style": "object",
+                "width": "auto"
             },
             "name": "MyPanel",
             "designerId": "b17ccd79-bb4a-4b0f-9a19-2ef4e2694ef9",
@@ -153,7 +155,7 @@
                                 "emptyText": "(Sin dato)",
                                 "itemId": "txtCirMed",
                                 "margin": "0 5 3 0",
-                                "width": 395
+                                "width": 372
                             },
                             "configAlternates": {
                                 "emptyText": "string",
@@ -334,6 +336,112 @@
                     "designerId": "09cd2625-0add-4392-87d8-fcca9080ea08",
                     "cn": [
                         {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processTxtMonthYear",
+                                "implHandler": [
+                                    "",
+                                    "/*",
+                                    "Ext.apply(config, {",
+                                    "    extend: 'Ext.form.field.Date',",
+                                    "    alias: 'widget.monthfield',",
+                                    "    requires: ['Ext.picker.Month'],",
+                                    "    alternateClassName: ['Ext.form.MonthField', 'Ext.form.Month'],",
+                                    "    selectMonth: null,",
+                                    "    format: 'F, Y',",
+                                    "    minValue: (new Date(new Date().setFullYear(new Date().getFullYear() - 1))),",
+                                    "    maxValue: (new Date()),",
+                                    "    fieldLabel: config.fieldLabel,",
+                                    "    createPicker: function() {",
+                                    "        var me = this,",
+                                    "            format = Ext.String.format;",
+                                    "        return Ext.create('Ext.picker.Month', {",
+                                    "            pickerField: me,",
+                                    "            ownerCt: me.ownerCt,",
+                                    "            floating: true,",
+                                    "            hidden: true,",
+                                    "            focusOnShow: true,",
+                                    "            minDate: (new Date(new Date().setFullYear(new Date().getFullYear() - 1))),",
+                                    "            maxDate: (new Date()),",
+                                    "            disabledDatesRE: me.disabledDatesRE,",
+                                    "            disabledDatesText: me.disabledDatesText,",
+                                    "            disabledDays: me.disabledDays,",
+                                    "            disabledDaysText: me.disabledDaysText,",
+                                    "            format: me.format,",
+                                    "            showToday: me.showToday,",
+                                    "            startDay: me.startDay,",
+                                    "            minText: format(me.minText, me.formatDate(me.minValue)),",
+                                    "            maxText: format(me.maxText, me.formatDate(me.maxValue)),",
+                                    "            listeners: {",
+                                    "                select: {",
+                                    "                    scope: me,",
+                                    "                    fn: me.onSelect",
+                                    "                },",
+                                    "                monthdblclick: {",
+                                    "                    scope: me,",
+                                    "                    fn: me.onOKClick",
+                                    "                },",
+                                    "                yeardblclick: {",
+                                    "                    scope: me,",
+                                    "                    fn: me.onOKClick",
+                                    "                },",
+                                    "                OkClick: {",
+                                    "                    scope: me,",
+                                    "                    fn: me.onOKClick",
+                                    "                },",
+                                    "                CancelClick: {",
+                                    "                    scope: me,",
+                                    "                    fn: me.onCancelClick",
+                                    "                }",
+                                    "            },",
+                                    "            keyNavConfig: {",
+                                    "                esc: function() {",
+                                    "                    me.collapse();",
+                                    "                }",
+                                    "            }",
+                                    "        });",
+                                    "    },",
+                                    "    onCancelClick: function() {",
+                                    "        var me = this;",
+                                    "        me.selectMonth = null;",
+                                    "        me.ownerCt.getComponent('txtMes').setValue(0);",
+                                    "        me.ownerCt.getComponent('txtAnio').setValue(0);",
+                                    "        me.collapse();",
+                                    "    },",
+                                    "    onOKClick: function() {",
+                                    "        var me = this;",
+                                    "        if (me.selectMonth) {",
+                                    "            me.setValue(me.selectMonth);",
+                                    "            me.fireEvent('select', me, me.selectMonth);",
+                                    "        }",
+                                    "        me.collapse();",
+                                    "        this.up().getViewModel().set('lPeriodoVerificado', null);",
+                                    "    },",
+                                    "    onSelect: function(m, d) {",
+                                    "        var me = this;",
+                                    "        me.ownerCt.getComponent('txtMes').setValue(d[0]+1);",
+                                    "        me.ownerCt.getComponent('txtAnio').setValue(d[1]);",
+                                    "        me.selectMonth = new Date((d[0] + 1) + '/1/' + d[1]);",
+                                    "    }",
+                                    "});",
+                                    " */",
+                                    "",
+                                    "return config;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "processTxtMonthYear",
+                            "designerId": "09a12433-4133-476e-a036-6d9449e2df2a"
+                        },
+                        {
                             "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
@@ -345,6 +453,8 @@
                                 "fieldLabel": "Año",
                                 "itemId": "txtAnio",
                                 "layout|flex": 1,
+                                "maxValue": 2040,
+                                "minValue": 2000,
                                 "name": "anio"
                             },
                             "configAlternates": {
@@ -352,40 +462,12 @@
                                 "fieldLabel": "string",
                                 "itemId": "string",
                                 "layout|flex": "number",
-                                "name": "string"
+                                "name": "string",
+                                "maxValue": "number",
+                                "minValue": "number"
                             },
                             "name": "MyNumberField1",
-                            "designerId": "cf0a6de3-355e-4ff2-ab89-08df3bb98dcc",
-                            "cn": [
-                                {
-                                    "type": "processcfgfunction",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|params": [
-                                            "config"
-                                        ],
-                                        "fn": "processTxtAnio",
-                                        "implHandler": [
-                                            "/*",
-                                            "",
-                                            "",
-                                            "*/",
-                                            "return config;"
-                                        ]
-                                    },
-                                    "configAlternates": {
-                                        "designer|params": "typedarray",
-                                        "fn": "string",
-                                        "implHandler": "code"
-                                    },
-                                    "name": "processTxtAnio",
-                                    "designerId": "965d1517-0b04-488d-b7ea-384033b7b6be"
-                                }
-                            ]
+                            "designerId": "cf0a6de3-355e-4ff2-ab89-08df3bb98dcc"
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -402,6 +484,8 @@
                                 "invalidText": "El Valor de este Campo no es valido",
                                 "itemId": "txtMes",
                                 "layout|flex": 1,
+                                "maxValue": 12,
+                                "minValue": 1,
                                 "name": "mes",
                                 "width": 193
                             },
@@ -414,7 +498,9 @@
                                 "itemId": "string",
                                 "layout|flex": "number",
                                 "name": "string",
-                                "width": "auto"
+                                "width": "auto",
+                                "maxValue": "number",
+                                "minValue": "number"
                             },
                             "name": "MyNumberField2",
                             "designerId": "b04512d8-dc97-40b9-93a8-99fb32d45e70"
@@ -539,7 +625,7 @@
                     "userConfig": {
                         "dock": null,
                         "fieldLabel": "Tipo de Consulta",
-                        "height": 53,
+                        "height": 52,
                         "labelWidth": 80,
                         "layout": "hbox",
                         "width": 541
@@ -570,6 +656,7 @@
                                 "dock": null,
                                 "fieldLabel": "Cantidades",
                                 "height": 22,
+                                "itemId": "chkCantidades",
                                 "labelWidth": 70,
                                 "layout|flex": 1,
                                 "liquidLayout": false,
@@ -587,7 +674,8 @@
                                 "liquidLayout": "boolean",
                                 "margin": "auto",
                                 "width": "auto",
-                                "labelWidth": "number"
+                                "labelWidth": "number",
+                                "itemId": "string"
                             },
                             "name": "MyCheckbox5",
                             "designerId": "1b150de4-340a-43d3-9142-d2d418b578cb"
@@ -604,6 +692,7 @@
                                 "dock": null,
                                 "fieldLabel": "Padron",
                                 "height": 22,
+                                "itemId": "chkPadron",
                                 "labelWidth": 55,
                                 "layout|flex": 1,
                                 "liquidLayout": false,
@@ -621,7 +710,8 @@
                                 "liquidLayout": "boolean",
                                 "margin": "auto",
                                 "width": "auto",
-                                "labelWidth": "number"
+                                "labelWidth": "number",
+                                "itemId": "string"
                             },
                             "name": "MyCheckbox6",
                             "designerId": "e9c48008-4c8e-45b3-818a-f128d18d0967"
@@ -641,6 +731,7 @@
                 "flex": 1,
                 "header": false,
                 "height": 225,
+                "itemId": "tblGrid",
                 "margin": "10 0 0 0",
                 "store": "dataStore",
                 "style": [
@@ -651,7 +742,8 @@
                     "\t",
                     "}"
                 ],
-                "title": "Grid"
+                "title": "Grid",
+                "width": 604
             },
             "configAlternates": {
                 "header": "boolean",
@@ -660,11 +752,237 @@
                 "margin": "auto",
                 "height": "auto",
                 "store": "store",
-                "flex": "number"
+                "flex": "number",
+                "width": "auto",
+                "itemId": "string"
             },
             "name": "MyGridPanel",
             "designerId": "05e791b8-d936-4970-a0cf-15807506612d",
             "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "itemId": "toolBarGridPadron"
+                    },
+                    "configAlternates": {
+                        "dock": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "2bc9d6b4-54c2-4ec7-88f5-d19f80e91a13",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "x-fa fa-file-excel",
+                                "itemId": "btnExportar",
+                                "layout|flex": null,
+                                "margin": "0 5 3 0",
+                                "text": "Exportar",
+                                "tooltip": "Exportar a Excel"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string",
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "tooltip": "string"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "5f655d63-93c3-4475-b199-6a030ed4ccd6",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var grid = Ext.ComponentQuery.query('#tblGrid')[0];",
+                                            "var store = grid.getStore();",
+                                            "var columns = grid.getColumns();",
+                                            "",
+                                            "var csv = '';",
+                                            "var columnHeaders = [];",
+                                            "",
+                                            "// Encabezados",
+                                            "columns.forEach(function(col) {",
+                                            "    if (!col.hidden && col.dataIndex) {",
+                                            "        columnHeaders.push('\"' + col.text + '\"');",
+                                            "    }",
+                                            "});",
+                                            "csv += columnHeaders.join(',') + '\\n';",
+                                            "",
+                                            "// Datos",
+                                            "store.each(function(record) {",
+                                            "    var row = [];",
+                                            "    columns.forEach(function(col) {",
+                                            "        if (!col.hidden && col.dataIndex) {",
+                                            "            var val = record.get(col.dataIndex);",
+                                            "            row.push('\"' + val + '\"');",
+                                            "        }",
+                                            "    });",
+                                            "    csv += row.join(',') + '\\n';",
+                                            "});",
+                                            "",
+                                            "// Crear blob y disparar descarga",
+                                            "var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });",
+                                            "var link = document.createElement('a');",
+                                            "var fileName = 'padron_medico.csv';",
+                                            "",
+                                            "if (navigator.msSaveBlob) { // Para IE",
+                                            "    navigator.msSaveBlob(blob, fileName);",
+                                            "} else {",
+                                            "    var url = URL.createObjectURL(blob);",
+                                            "    link.setAttribute('href', url);",
+                                            "    link.setAttribute('download', fileName);",
+                                            "    document.body.appendChild(link);",
+                                            "    link.click();",
+                                            "    document.body.removeChild(link);",
+                                            "}",
+                                            ""
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "handler",
+                                    "designerId": "ce281f65-f0b1-4d05-a82f-70c91fcb0c8e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "x-fa fa-print",
+                                "itemId": "btnImprimir",
+                                "layout|flex": null,
+                                "margin": "0 5 3 0",
+                                "text": "Imprimir",
+                                "tooltip": "Imprimir"
+                            },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "tooltip": "string"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "8c0b7834-4933-4cbb-beb2-856e82253a9d",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var grid = Ext.ComponentQuery.query('#tblGrid')[0];",
+                                            "var store = grid.getStore();",
+                                            "var columns = grid.getColumns();",
+                                            "",
+                                            "// Crear HTML de la tabla",
+                                            "var html = '<html><head><title>Impresión del Padron General</title>';",
+                                            "html += '<style>table{border-collapse:collapse;width:100%}th,td{border:1px solid #000;padding:4px;text-align:left}</style>';",
+                                            "html += '</head><body>';",
+                                            "html += '<h2>Padrón General</h2>';",
+                                            "html += '<table><thead><tr>';",
+                                            "",
+                                            "// Encabezados",
+                                            "columns.forEach(function(col) {",
+                                            "    if (!col.hidden && col.text) {",
+                                            "        html += '<th>' + col.text + '</th>';",
+                                            "    }",
+                                            "});",
+                                            "html += '</tr></thead><tbody>';",
+                                            "",
+                                            "// Filas",
+                                            "store.each(function(record) {",
+                                            "    html += '<tr>';",
+                                            "    columns.forEach(function(col) {",
+                                            "        if (!col.hidden && col.dataIndex) {",
+                                            "            html += '<td>' + record.get(col.dataIndex) + '</td>';",
+                                            "        }",
+                                            "    });",
+                                            "    html += '</tr>';",
+                                            "});",
+                                            "",
+                                            "html += '</tbody></table></body></html>';",
+                                            "",
+                                            "// Abrir en ventana nueva y mandar a imprimir",
+                                            "var win = window.open('', '', 'width=800,height=600');",
+                                            "win.document.write(html);",
+                                            "win.document.close();",
+                                            "win.print();",
+                                            ""
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "handler",
+                                    "designerId": "b59d062c-d962-4af8-83e9-94b73fc942ae"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "tblGridContenedor",
+                        "width": 604
+                    },
+                    "configAlternates": {
+                        "style": "object",
+                        "itemId": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTable",
+                    "designerId": "0aa91a42-a747-4a14-bfab-a541624a5b3b"
+                },
                 {
                     "type": "Ext.grid.column.Column",
                     "reference": {
@@ -674,16 +992,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "apellidoNombre",
-                        "text": "Apellido y Nombre",
-                        "width": 170
+                        "flex": 1,
+                        "text": "Apellido Nombre"
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string",
-                        "width": "auto"
+                        "flex": "number",
+                        "text": "string"
                     },
-                    "name": "MyColumn",
-                    "designerId": "e38465e9-90b2-4c55-819f-1a970ec0ad60"
+                    "name": "MyColumn2",
+                    "designerId": "06188882-21ec-40db-bfa1-0b46f2c7b3e4"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -694,16 +1012,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "cuit",
-                        "text": "CUIT",
-                        "width": 137
+                        "text": "Cuit",
+                        "width": 129
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "text": "string",
                         "width": "auto"
                     },
-                    "name": "MyColumn3",
-                    "designerId": "e10f64a4-383a-404c-af98-ed0223ebb0a0"
+                    "name": "MyColumn4",
+                    "designerId": "d5cd2c7b-517c-4daf-b3a8-cd131e41d4df"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -714,33 +1032,36 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "fechaNacimiento",
-                        "text": "Fecha de Nacimiento",
-                        "width": 220
+                        "text": "Fecha Nacimiento",
+                        "width": 111
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "text": "string",
                         "width": "auto"
                     },
-                    "name": "MyColumn5",
-                    "designerId": "58e0629c-2000-490c-b7d3-e6f6ad8f3cae"
+                    "name": "MyColumn6",
+                    "designerId": "ce01298e-810f-4477-9f9f-817a299eea38"
                 },
                 {
-                    "type": "Ext.view.Table",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
-                        "name": "viewConfig",
-                        "type": "object"
+                        "name": "columns",
+                        "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "tblGrid"
+                        "dataIndex": "localidad",
+                        "text": "Localidad",
+                        "width": 156
                     },
                     "configAlternates": {
-                        "style": "object",
-                        "itemId": "string"
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
                     },
-                    "name": "MyTable",
-                    "designerId": "0aa91a42-a747-4a14-bfab-a541624a5b3b"
+                    "name": "MyColumn7",
+                    "designerId": "d19cd9d0-88c3-4077-9987-f79614df9d05"
                 }
             ]
         },
@@ -799,6 +1120,7 @@
                             "}"
                         ],
                         "text": "Aceptar",
+                        "tooltip": "Aceptar",
                         "width": 94
                     },
                     "configAlternates": {
@@ -808,10 +1130,38 @@
                         "layout|region": "string",
                         "margin": "auto",
                         "text": "string",
-                        "width": "auto"
+                        "width": "auto",
+                        "tooltip": "string"
                     },
                     "name": "MyButton1",
-                    "designerId": "812e979d-0598-4ec8-9e2c-fb66fd53b18a"
+                    "designerId": "812e979d-0598-4ec8-9e2c-fb66fd53b18a",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "debugger;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "e337a991-9cd6-4569-915e-993aa710e51a"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -832,6 +1182,7 @@
                             "}"
                         ],
                         "text": "Cancelar",
+                        "tooltip": "Cancelar",
                         "width": 94
                     },
                     "configAlternates": {
@@ -841,7 +1192,8 @@
                         "layout|region": "string",
                         "margin": "auto",
                         "text": "string",
-                        "width": "auto"
+                        "width": "auto",
+                        "tooltip": "string"
                     },
                     "name": "MyButton2",
                     "designerId": "b85dfd4e-6bcb-450e-a3a2-d669db093d04",
@@ -860,6 +1212,8 @@
                                 ],
                                 "fn": "handler",
                                 "implHandler": [
+                                    "",
+                                    "",
                                     "button.ownerCt.ownerCt.close();",
                                     ""
                                 ]

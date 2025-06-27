@@ -24,8 +24,9 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
         'Ext.button.Button',
         'Ext.form.field.Checkbox',
         'Ext.grid.Panel',
-        'Ext.grid.column.Column',
-        'Ext.view.Table'
+        'Ext.toolbar.Toolbar',
+        'Ext.view.Table',
+        'Ext.grid.column.Column'
     ],
 
     viewModel: {
@@ -33,11 +34,481 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
     },
     autoShow: true,
     height: 569,
-    width: 668,
+    width: 620,
     bodyPadding: 3,
     iconCls: 'x-fa fa-address-book',
     title: 'Padron Gral',
 
+    items: [
+        {
+            xtype: 'panel',
+            height: 300,
+            style: '// ver si sale en VSC',
+            width: 658,
+            layout: 'anchor',
+            bodyPadding: 10,
+            header: false,
+            title: 'cntpanel',
+            items: [
+                {
+                    xtype: 'fieldcontainer',
+                    height: 40,
+                    itemId: 'cntCirMed',
+                    margin: '0 5 3 0',
+                    layout: 'column',
+                    items: [
+                        {
+                            xtype: 'numberfield',
+                            itemId: 'numCM',
+                            margin: '0 5 3 0',
+                            width: 184,
+                            fieldLabel: 'Circulo Medico',
+                            blankText: 'Ingrese Numero de CM',
+                            hideTrigger: true,
+                            maxValue: 999,
+                            minValue: 1
+                        },
+                        {
+                            xtype: 'button',
+                            height: 34,
+                            itemId: 'btnbuscar',
+                            margin: '0 5 3 0',
+                            width: 32,
+                            iconCls: 'x-fa fa-search',
+                            tooltip: 'Buscar...'
+                        },
+                        {
+                            xtype: 'textfield',
+                            itemId: 'txtCirMed',
+                            margin: '0 5 3 0',
+                            width: 372,
+                            emptyText: '(Sin dato)'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldcontainer',
+                    height: 109,
+                    itemId: 'cntProf',
+                    margin: '20 0 0 0',
+                    width: 140,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 0,
+                            reference: 'chkMedicos',
+                            itemId: 'chkMedicos',
+                            margin: '0 5 3 0',
+                            width: 32,
+                            fieldLabel: 'Medicos',
+                            labelWidth: 50,
+                            bind: {
+                                disabled: {
+                                    bindTo: '{chkVeterinarios.checked}',
+                                    deep: true
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            reference: 'chkVeterinarios',
+                            itemId: 'chkVeterinarios',
+                            margin: '0 5 3 0',
+                            fieldLabel: 'Solo Veterinarios',
+                            labelWidth: 103,
+                            bind: {
+                                disabled: {
+                                    bindTo: '{chkMedicos.checked}',
+                                    deep: true
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            reference: 'chkActivos',
+                            itemId: 'chkActivos',
+                            margin: '0 5 3 0',
+                            width: 32,
+                            fieldLabel: 'Solo Activos',
+                            labelWidth: 103,
+                            bind: {
+                                disabled: {
+                                    bindTo: '{!chkMedicos.checked && !chkVeterinarios.checked}',
+                                    deep: true
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldcontainer',
+                    processTxtMonthYear: function() {
+
+                        /*
+                        Ext.apply(config, {
+                        extend: 'Ext.form.field.Date',
+                        alias: 'widget.monthfield',
+                        requires: ['Ext.picker.Month'],
+                        alternateClassName: ['Ext.form.MonthField', 'Ext.form.Month'],
+                        selectMonth: null,
+                        format: 'F, Y',
+                        minValue: (new Date(new Date().setFullYear(new Date().getFullYear() - 1))),
+                        maxValue: (new Date()),
+                        fieldLabel: config.fieldLabel,
+                        createPicker: function() {
+                        var me = this,
+                        format = Ext.String.format;
+                        return Ext.create('Ext.picker.Month', {
+                        pickerField: me,
+                        ownerCt: me.ownerCt,
+                        floating: true,
+                        hidden: true,
+                        focusOnShow: true,
+                        minDate: (new Date(new Date().setFullYear(new Date().getFullYear() - 1))),
+                        maxDate: (new Date()),
+                        disabledDatesRE: me.disabledDatesRE,
+                        disabledDatesText: me.disabledDatesText,
+                        disabledDays: me.disabledDays,
+                        disabledDaysText: me.disabledDaysText,
+                        format: me.format,
+                        showToday: me.showToday,
+                        startDay: me.startDay,
+                        minText: format(me.minText, me.formatDate(me.minValue)),
+                        maxText: format(me.maxText, me.formatDate(me.maxValue)),
+                        listeners: {
+                        select: {
+                        scope: me,
+                        fn: me.onSelect
+                        },
+                        monthdblclick: {
+                        scope: me,
+                        fn: me.onOKClick
+                        },
+                        yeardblclick: {
+                        scope: me,
+                        fn: me.onOKClick
+                        },
+                        OkClick: {
+                        scope: me,
+                        fn: me.onOKClick
+                        },
+                        CancelClick: {
+                        scope: me,
+                        fn: me.onCancelClick
+                        }
+                        },
+                        keyNavConfig: {
+                        esc: function() {
+                        me.collapse();
+                        }
+                        }
+                        });
+                        },
+                        onCancelClick: function() {
+                        var me = this;
+                        me.selectMonth = null;
+                        me.ownerCt.getComponent('txtMes').setValue(0);
+                        me.ownerCt.getComponent('txtAnio').setValue(0);
+                        me.collapse();
+                        },
+                        onOKClick: function() {
+                        var me = this;
+                        if (me.selectMonth) {
+                        me.setValue(me.selectMonth);
+                        me.fireEvent('select', me, me.selectMonth);
+                        }
+                        me.collapse();
+                        this.up().getViewModel().set('lPeriodoVerificado', null);
+                        },
+                        onSelect: function(m, d) {
+                        var me = this;
+                        me.ownerCt.getComponent('txtMes').setValue(d[0]+1);
+                        me.ownerCt.getComponent('txtAnio').setValue(d[1]);
+                        me.selectMonth = new Date((d[0] + 1) + '/1/' + d[1]);
+                        }
+                        });
+                        */
+
+                        return config;
+                    },
+                    height: 76,
+                    itemId: 'cntFecha',
+                    margin: '-110 8 3 200',
+                    width: 283,
+                    labelAlign: 'right',
+                    labelWidth: 50,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'numberfield',
+                            flex: 1,
+                            dock: 'top',
+                            itemId: 'txtAnio',
+                            fieldLabel: 'Año',
+                            name: 'anio',
+                            maxValue: 2040,
+                            minValue: 2000
+                        },
+                        {
+                            xtype: 'numberfield',
+                            flex: 1,
+                            dock: 'top',
+                            itemId: 'txtMes',
+                            width: 193,
+                            fieldLabel: 'Mes',
+                            name: 'mes',
+                            invalidText: 'El Valor de este Campo no es valido',
+                            allowDecimals: false,
+                            allowExponential: false,
+                            maxValue: 12,
+                            minValue: 1
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldcontainer',
+                    height: 89,
+                    itemId: 'cntDatos',
+                    margin: '0 0 0 200',
+                    padding: 3,
+                    width: 182,
+                    labelAlign: 'right',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            reference: 'chkCUIT',
+                            itemId: 'chkCUIT',
+                            width: 66,
+                            fieldLabel: 'C.U.I.T',
+                            labelWidth: 66,
+                            bind: {
+                                disabled: {
+                                    bindTo: '{chkNombre.checked}',
+                                    deep: true
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            reference: 'chkNombre',
+                            itemId: 'chkNombre',
+                            margin: '30 0 0 -65',
+                            width: 70,
+                            fieldLabel: 'Nombre',
+                            labelWidth: 66,
+                            bind: {
+                                disabled: {
+                                    bindTo: '{chkCUIT.checked}',
+                                    deep: true
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldcontainer',
+                    height: 52,
+                    width: 541,
+                    layout: 'hbox',
+                    fieldLabel: 'Tipo de Consulta',
+                    labelWidth: 80,
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            anchor: '',
+                            height: 22,
+                            itemId: 'chkCantidades',
+                            liquidLayout: false,
+                            margin: '0 60 30 0',
+                            width: 150,
+                            fieldLabel: 'Cantidades',
+                            labelWidth: 70,
+                            boxLabel: ''
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            flex: 1,
+                            anchor: '',
+                            height: 22,
+                            itemId: 'chkPadron',
+                            liquidLayout: false,
+                            margin: '0 300 30 0',
+                            width: 150,
+                            fieldLabel: 'Padron',
+                            labelWidth: 55
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            xtype: 'gridpanel',
+            flex: 1,
+            height: 225,
+            itemId: 'tblGrid',
+            margin: '10 0 0 0',
+            style: {
+                borderTop: '2px solid #ADD8E6',
+                // Borde superior sólido
+            },
+            width: 604,
+            header: false,
+            title: 'Grid',
+            store: 'dataStore',
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'top',
+                    itemId: 'toolBarGridPadron',
+                    items: [
+                        {
+                            xtype: 'button',
+                            handler: function(button, e) {
+                                var grid = Ext.ComponentQuery.query('#tblGrid')[0];
+                                var store = grid.getStore();
+                                var columns = grid.getColumns();
+
+                                var csv = '';
+                                var columnHeaders = [];
+
+                                // Encabezados
+                                columns.forEach(function(col) {
+                                    if (!col.hidden && col.dataIndex) {
+                                        columnHeaders.push('"' + col.text + '"');
+                                    }
+                                });
+                                csv += columnHeaders.join(',') + '\n';
+
+                                // Datos
+                                store.each(function(record) {
+                                    var row = [];
+                                    columns.forEach(function(col) {
+                                        if (!col.hidden && col.dataIndex) {
+                                            var val = record.get(col.dataIndex);
+                                            row.push('"' + val + '"');
+                                        }
+                                    });
+                                    csv += row.join(',') + '\n';
+                                });
+
+                                // Crear blob y disparar descarga
+                                var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                                var link = document.createElement('a');
+                                var fileName = 'padron_medico.csv';
+
+                                if (navigator.msSaveBlob) { // Para IE
+                                    navigator.msSaveBlob(blob, fileName);
+                                } else {
+                                    var url = URL.createObjectURL(blob);
+                                    link.setAttribute('href', url);
+                                    link.setAttribute('download', fileName);
+                                    document.body.appendChild(link);
+                                    link.click();
+                                    document.body.removeChild(link);
+                                }
+
+                            },
+                            itemId: 'btnExportar',
+                            margin: '0 5 3 0',
+                            iconCls: 'x-fa fa-file-excel',
+                            text: 'Exportar',
+                            tooltip: 'Exportar a Excel'
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, e) {
+                                var grid = Ext.ComponentQuery.query('#tblGrid')[0];
+                                var store = grid.getStore();
+                                var columns = grid.getColumns();
+
+                                // Crear HTML de la tabla
+                                var html = '<html><head><title>Impresión del Padron General</title>';
+                                html += '<style>table{border-collapse:collapse;width:100%}th,td{border:1px solid #000;padding:4px;text-align:left}</style>';
+                                html += '</head><body>';
+                                html += '<h2>Padrón General</h2>';
+                                html += '<table><thead><tr>';
+
+                                // Encabezados
+                                columns.forEach(function(col) {
+                                    if (!col.hidden && col.text) {
+                                        html += '<th>' + col.text + '</th>';
+                                    }
+                                });
+                                html += '</tr></thead><tbody>';
+
+                                // Filas
+                                store.each(function(record) {
+                                    html += '<tr>';
+                                    columns.forEach(function(col) {
+                                        if (!col.hidden && col.dataIndex) {
+                                            html += '<td>' + record.get(col.dataIndex) + '</td>';
+                                        }
+                                    });
+                                    html += '</tr>';
+                                });
+
+                                html += '</tbody></table></body></html>';
+
+                                // Abrir en ventana nueva y mandar a imprimir
+                                var win = window.open('', '', 'width=800,height=600');
+                                win.document.write(html);
+                                win.document.close();
+                                win.print();
+
+                            },
+                            itemId: 'btnImprimir',
+                            margin: '0 5 3 0',
+                            iconCls: 'x-fa fa-print',
+                            text: 'Imprimir',
+                            tooltip: 'Imprimir'
+                        }
+                    ]
+                }
+            ],
+            viewConfig: {
+                itemId: 'tblGridContenedor',
+                width: 604
+            },
+            columns: [
+                {
+                    xtype: 'gridcolumn',
+                    flex: 1,
+                    dataIndex: 'apellidoNombre',
+                    text: 'Apellido Nombre'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 129,
+                    dataIndex: 'cuit',
+                    text: 'Cuit'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 111,
+                    dataIndex: 'fechaNacimiento',
+                    text: 'Fecha Nacimiento'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 156,
+                    dataIndex: 'localidad',
+                    text: 'Localidad'
+                }
+            ]
+        }
+    ],
     dockedItems: [
         {
             xtype: 'fieldcontainer',
@@ -61,6 +532,9 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
             items: [
                 {
                     xtype: 'button',
+                    handler: function(button, e) {
+                        debugger;
+                    },
                     region: 'east',
                     itemId: 'cmdAceptar',
                     margin: '5 0 5 5',
@@ -71,11 +545,14 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                     },
                     width: 94,
                     iconCls: 'x-fa fa-check',
-                    text: 'Aceptar'
+                    text: 'Aceptar',
+                    tooltip: 'Aceptar'
                 },
                 {
                     xtype: 'button',
                     handler: function(button, e) {
+
+
                         button.ownerCt.ownerCt.close();
 
                     },
@@ -89,283 +566,11 @@ Ext.define('App_Test_PadronGral.view.cntPrincipal', {
                     },
                     width: 94,
                     iconCls: 'x-fa fa-times',
-                    text: 'Cancelar'
+                    text: 'Cancelar',
+                    tooltip: 'Cancelar'
                 }
             ]
         }
-    ],
-
-    initConfig: function(instanceConfig) {
-        var me = this,
-            config = {
-                items: [
-                    {
-                        xtype: 'panel',
-                        height: 372,
-                        style: '// ver si sale en VSC',
-                        layout: 'anchor',
-                        bodyPadding: 10,
-                        header: false,
-                        title: 'cntpanel',
-                        items: [
-                            {
-                                xtype: 'fieldcontainer',
-                                height: 40,
-                                itemId: 'cntCirMed',
-                                margin: '0 5 3 0',
-                                layout: 'column',
-                                items: [
-                                    {
-                                        xtype: 'numberfield',
-                                        itemId: 'numCM',
-                                        margin: '0 5 3 0',
-                                        width: 184,
-                                        fieldLabel: 'Circulo Medico',
-                                        blankText: 'Ingrese Numero de CM',
-                                        hideTrigger: true,
-                                        maxValue: 999,
-                                        minValue: 1
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        height: 34,
-                                        itemId: 'btnbuscar',
-                                        margin: '0 5 3 0',
-                                        width: 32,
-                                        iconCls: 'x-fa fa-search',
-                                        tooltip: 'Buscar...'
-                                    },
-                                    {
-                                        xtype: 'textfield',
-                                        itemId: 'txtCirMed',
-                                        margin: '0 5 3 0',
-                                        width: 395,
-                                        emptyText: '(Sin dato)'
-                                    }
-                                ]
-                            },
-                            {
-                                xtype: 'fieldcontainer',
-                                height: 109,
-                                itemId: 'cntProf',
-                                margin: '20 0 0 0',
-                                width: 140,
-                                layout: {
-                                    type: 'vbox',
-                                    align: 'stretch'
-                                },
-                                items: [
-                                    {
-                                        xtype: 'checkboxfield',
-                                        flex: 0,
-                                        reference: 'chkMedicos',
-                                        itemId: 'chkMedicos',
-                                        margin: '0 5 3 0',
-                                        width: 32,
-                                        fieldLabel: 'Medicos',
-                                        labelWidth: 50,
-                                        bind: {
-                                            disabled: {
-                                                bindTo: '{chkVeterinarios.checked}',
-                                                deep: true
-                                            }
-                                        }
-                                    },
-                                    {
-                                        xtype: 'checkboxfield',
-                                        reference: 'chkVeterinarios',
-                                        itemId: 'chkVeterinarios',
-                                        margin: '0 5 3 0',
-                                        fieldLabel: 'Solo Veterinarios',
-                                        labelWidth: 103,
-                                        bind: {
-                                            disabled: {
-                                                bindTo: '{chkMedicos.checked}',
-                                                deep: true
-                                            }
-                                        }
-                                    },
-                                    {
-                                        xtype: 'checkboxfield',
-                                        reference: 'chkActivos',
-                                        itemId: 'chkActivos',
-                                        margin: '0 5 3 0',
-                                        width: 32,
-                                        fieldLabel: 'Solo Activos',
-                                        labelWidth: 103,
-                                        bind: {
-                                            disabled: {
-                                                bindTo: '{!chkMedicos.checked && !chkVeterinarios.checked}',
-                                                deep: true
-                                            }
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                xtype: 'fieldcontainer',
-                                height: 76,
-                                itemId: 'cntFecha',
-                                margin: '-110 8 3 200',
-                                width: 283,
-                                labelAlign: 'right',
-                                labelWidth: 50,
-                                layout: {
-                                    type: 'vbox',
-                                    align: 'stretch'
-                                },
-                                items: [
-                                    me.processTxtAnio({
-                                        xtype: 'numberfield',
-                                        flex: 1,
-                                        dock: 'top',
-                                        itemId: 'txtAnio',
-                                        fieldLabel: 'Año',
-                                        name: 'anio'
-                                    }),
-                                    {
-                                        xtype: 'numberfield',
-                                        flex: 1,
-                                        dock: 'top',
-                                        itemId: 'txtMes',
-                                        width: 193,
-                                        fieldLabel: 'Mes',
-                                        name: 'mes',
-                                        invalidText: 'El Valor de este Campo no es valido',
-                                        allowDecimals: false,
-                                        allowExponential: false
-                                    }
-                                ]
-                            },
-                            {
-                                xtype: 'fieldcontainer',
-                                height: 89,
-                                itemId: 'cntDatos',
-                                margin: '0 0 0 200',
-                                padding: 3,
-                                width: 182,
-                                labelAlign: 'right',
-                                layout: {
-                                    type: 'hbox',
-                                    align: 'stretch'
-                                },
-                                items: [
-                                    {
-                                        xtype: 'checkboxfield',
-                                        reference: 'chkCUIT',
-                                        itemId: 'chkCUIT',
-                                        width: 66,
-                                        fieldLabel: 'C.U.I.T',
-                                        labelWidth: 66,
-                                        bind: {
-                                            disabled: {
-                                                bindTo: '{chkNombre.checked}',
-                                                deep: true
-                                            }
-                                        }
-                                    },
-                                    {
-                                        xtype: 'checkboxfield',
-                                        reference: 'chkNombre',
-                                        itemId: 'chkNombre',
-                                        margin: '30 0 0 -65',
-                                        width: 70,
-                                        fieldLabel: 'Nombre',
-                                        labelWidth: 66,
-                                        bind: {
-                                            disabled: {
-                                                bindTo: '{chkCUIT.checked}',
-                                                deep: true
-                                            }
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                xtype: 'fieldcontainer',
-                                height: 53,
-                                width: 541,
-                                layout: 'hbox',
-                                fieldLabel: 'Tipo de Consulta',
-                                labelWidth: 80,
-                                items: [
-                                    {
-                                        xtype: 'checkboxfield',
-                                        flex: 1,
-                                        anchor: '',
-                                        height: 22,
-                                        liquidLayout: false,
-                                        margin: '0 60 30 0',
-                                        width: 150,
-                                        fieldLabel: 'Cantidades',
-                                        labelWidth: 70,
-                                        boxLabel: ''
-                                    },
-                                    {
-                                        xtype: 'checkboxfield',
-                                        flex: 1,
-                                        anchor: '',
-                                        height: 22,
-                                        liquidLayout: false,
-                                        margin: '0 300 30 0',
-                                        width: 150,
-                                        fieldLabel: 'Padron',
-                                        labelWidth: 55
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        xtype: 'gridpanel',
-                        flex: 1,
-                        height: 225,
-                        margin: '10 0 0 0',
-                        style: {
-                            borderTop: '2px solid #ADD8E6',
-                            // Borde superior sólido
-                        },
-                        header: false,
-                        title: 'Grid',
-                        store: 'dataStore',
-                        columns: [
-                            {
-                                xtype: 'gridcolumn',
-                                width: 170,
-                                dataIndex: 'apellidoNombre',
-                                text: 'Apellido y Nombre'
-                            },
-                            {
-                                xtype: 'gridcolumn',
-                                width: 137,
-                                dataIndex: 'cuit',
-                                text: 'CUIT'
-                            },
-                            {
-                                xtype: 'gridcolumn',
-                                width: 220,
-                                dataIndex: 'fechaNacimiento',
-                                text: 'Fecha de Nacimiento'
-                            }
-                        ],
-                        viewConfig: {
-                            itemId: 'tblGrid'
-                        }
-                    }
-                ]
-            };
-        if (instanceConfig) {
-            me.self.getConfigurator().merge(me, config, instanceConfig);
-        }
-        return me.callParent([config]);
-    },
-
-    processTxtAnio: function(config) {
-        /*
-
-
-        */
-        return config;
-    }
+    ]
 
 });

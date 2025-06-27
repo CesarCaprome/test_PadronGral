@@ -66,5 +66,5 @@ Ext.apply(config, {
 	maxValue: hoy
 });
  
-return config;
-*/
+return config
+*/*/
